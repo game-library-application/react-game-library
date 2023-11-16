@@ -1,9 +1,9 @@
-1. Planning
+# 1. Planning
 
-1.1 What’s your product / MVP? Define the main features
+## 1.1 What’s your product / MVP? Define the main features
 
 
-Game Database (sort of like Steam)
+### Game Database (sort of like Steam)
 
 MVP:
 - Browse available games;
@@ -22,7 +22,7 @@ Bonus:
 - Responsive page.
 
 
-1.2 Break down into small tasks. Recommendation: set time estimation for each task
+## 1.2 Break down into small tasks. Recommendation: set time estimation for each task
 
 Homepage:
 - Navbar* (Home, Browse Games, Add Game);
@@ -51,12 +51,12 @@ Delete button:
 *applies to all pages
 
 
-1.3 Task management: Trello
+## 1.3 Task management: Trello
 
-1.4 (bonus) Draw some wireframes. Tools: https://whimsical.com, https://miro.com, https://excalidraw.com
+## 1.4 (bonus) Draw some wireframes. Tools: https://whimsical.com, https://miro.com, https://excalidraw.com
 
 
-2. Backend API
+### 2. Backend API
 
 Option 1: create our own mock API with json-server and test with Postman
 
