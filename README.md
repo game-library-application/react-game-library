@@ -15,11 +15,12 @@ MVP:
 Bonus:
 - Ability to search games (search bar);
 - Filter search;
+- Responsive page;
 - Recommended page (based on highest rated);
 - Filter search for recommended page;
 - Favorites page (+ "Add to Favorites" button in Game details page);
 - Change "Edit game" to show form under the game in game details page;
-- Responsive page.
+- Embed trailer in game details page.
 
 
 ## 1.2 Break down into small tasks. Recommendation: set time estimation for each task
