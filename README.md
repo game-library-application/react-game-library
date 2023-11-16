@@ -56,7 +56,7 @@ Delete button:
 ## 1.4 (bonus) Draw some wireframes. Tools: https://whimsical.com, https://miro.com, https://excalidraw.com
 
 
-### 2. Backend API
+# 2. Backend API
 
 Option 1: create our own mock API with json-server and test with Postman
 
