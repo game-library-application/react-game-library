@@ -20,7 +20,7 @@ function App() {
         <Route path="/games" element={< GamesListPage />} />
         <Route path="/games/:gameId" element={< GameDetailsPage />} />  
         <Route path="/add" element={< AddGamePage />} />  
-        <Route path="/edit" element={< EditGamePage />} />  
+        <Route path="/edit/:gameId" element={< EditGamePage />} />  
       </Routes>
       <Footer />
     </>
