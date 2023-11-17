@@ -2,9 +2,9 @@ function Homepage() {
 
     return (
         <div className="HomepageDiv">
-            <h1>Welcome to *insert cheesy name here*</h1>
-            <img src="" alt="Some image is supposed to go here" />
-            <p>And some text here...</p>
+            <h1 className="HomepageTitle">Welcome to your favorite Game Library</h1>
+            <img src="https://www.pulsecarshalton.co.uk/wp-content/uploads/2016/08/jk-placeholder-image.jpg" alt="Some image is supposed to go here" className="HomepageImage"/>
+            <p className="HomepageDescription">Some text goes here...</p>
         </div>
     
     )

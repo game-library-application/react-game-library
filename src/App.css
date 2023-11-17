@@ -54,17 +54,43 @@ body {
 }
 
 /*
+    HOMEPAGE CSS
+*/
+
+.HomepageDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 50px;
+}
+
+.HomepageTitle,
+.HomepageImage,
+.HomepageDescription {
+    margin: 30px;
+}
+
+.HomepageImage {
+    width: 1000px;
+    height: auto;
+}
+
+/*
     GAMES LIST PAGE CSS
 */
 
 .GamesListDiv {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     margin: 50px 50px;
 }
 
 .GamesListImageDiv {
     display: flex;
+    justify-content: center;
+    align-items: center;
     width: 460px;
     height: 215px;
     border-radius: 30px;
