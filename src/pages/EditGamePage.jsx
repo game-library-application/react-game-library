@@ -97,6 +97,7 @@ function EditGamePage() {
               name="rating"
               min={1}
               max={10}
+              step=".01"
               value={rating}
               onChange={(e) => setRating(e.target.value)}
             />
@@ -115,6 +116,7 @@ function EditGamePage() {
             <input
               type="number"
               name="price"
+              step=".01"
               value={price}
               onChange={(e) => setPrice(e.target.value)}
             />
