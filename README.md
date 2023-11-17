@@ -25,29 +25,47 @@ Bonus:
 
 ## 1.2 Break down into small tasks. Recommendation: set time estimation for each task
 
-Homepage:
-- Navbar* (Home, Browse Games, Add Game);
-- Some image to display;
-- Some text about the page;
-- Footer* 
+### Homepage:
 
-Browse games page:
-- Display all games (Links to game details page);
+[X] Navbar* (Home, Browse Games, Add Game);
 
-Game details page:
-- Display info about game (Name, image, description, rating, genre, price, etc)
-- Buttons to edit/delete game.
+[ ] Some image to display;
 
-Add game page:
-- Form with inputs (Name, image, description, etc) + define which are required.
+[ ] Some text about the page;
 
-Edit game page:
-- Pre-filled form with inputs to change game details;
-- Possibly add game details/info component above.
+[ ] Footer* 
 
-Delete button:
-- Delete game;
-- Navigate to browse games.
+
+### Browse games page:
+
+[X] Display all games (Links to game details page);
+
+
+### Game details page:
+
+[X] Display info about game (Name, image, description, rating, genre, price, etc)
+
+[X] Buttons to edit/delete game.
+
+
+### Add game page:
+
+[ ] Form with inputs (Name, image, description, etc) + define which are required.
+
+
+### Edit game page:
+
+[ ] Pre-filled form with inputs to change game details;
+
+[ ] Possibly add game details/info component above.
+
+
+### Delete button:
+
+[ ] Delete game;
+
+[ ] Navigate to browse games.
+
 
 *applies to all pages
 
@@ -60,14 +78,3 @@ Delete button:
 # 2. Backend API
 
 Option 1: create our own mock API with json-server and test with Postman
-
-
-
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh

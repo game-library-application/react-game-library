@@ -1,5 +1,7 @@
 body {
     text-align: center;
+    background-color: rgb(54, 54, 54);
+    color: white;
 }
 
 #root {
@@ -59,4 +61,11 @@ body {
     width: 460px;
     height: 215px;
     border-radius: 30px;
+    transition: 0.2s;
+}
+
+.GamesListImageDiv a img:hover {
+    width: 480px;
+    height: 230px;
+    transition: 0.2s;
 }
