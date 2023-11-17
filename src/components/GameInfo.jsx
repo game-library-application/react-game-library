@@ -8,7 +8,7 @@ function GameInfo(props) {
       <p>{props.game.price}€</p>
       <p>{props.game.genre}</p>
       <p>{props.game.platform}</p>
-      <p>{props.game.free}</p>
+      {props.game.free === true && (<p>Free</p>) || props.game.free !== true && (<p>Paid</p>)}
     </div>
   );
 }

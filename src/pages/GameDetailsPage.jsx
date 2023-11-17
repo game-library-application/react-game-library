@@ -44,7 +44,7 @@ function GameDetailsPage() {
       ) : (
         <GameInfo game={gameDetails} />
       )}
-      <Link to="/edit">
+      <Link to={`/edit/${gameId}`}>
         <button>Edit</button>
       </Link>
 
