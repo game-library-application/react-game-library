@@ -51,7 +51,7 @@ function AddGamePage() {
     }
 
     return (
-        <div className="AddGameDiv">
+        <div className="FormDiv">
             <form onSubmit={handleSubmit}>
                 <label>
                     <p>Title</p>
@@ -130,7 +130,7 @@ function AddGamePage() {
                         onChange={(e) => { setImageUrl(e.target.value) }}
                     />
                 </label>
-                <button className="AddGameButton">Add Game</button>
+                <button className="FormButton">Add Game</button>
             </form>
         </div>
 

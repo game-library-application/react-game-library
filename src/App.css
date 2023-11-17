@@ -102,8 +102,8 @@ body {
     margin-left: 10px;
 }
 
-.AddGameButton,
-.AddGameDiv input,
+.FormButton,
+.FormDiv input,
 textarea {
     width: 500px;
     height: 40px;
@@ -112,11 +112,11 @@ textarea {
     transition: 0.2s;
 }
 
-.AddGameDiv textarea {
+.FormDiv textarea {
     height: 100px;
 }
 
-.AddGameDiv form {
+.FormDiv form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -125,7 +125,7 @@ textarea {
     margin: 0 auto;
 }
 
-.AddGameButton {
+.FormButton {
     color: white;
     font-size: 18px;
     font-weight: bold;
@@ -138,7 +138,7 @@ textarea {
     cursor: pointer;
 }
 
-.AddGameButton:hover {
+.FormButton:hover {
     background-color: rgb(105, 161, 162);
     width: 220px;
     height: 55px;
@@ -147,7 +147,7 @@ textarea {
     transition: 0.2s;
 }
 
-.AddGameButton:active {
+.FormButton:active {
     background-color: rgb(72, 155, 156);
     width: 190px;
     height: 48px;
