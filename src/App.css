@@ -10,7 +10,7 @@ body {
 }
 
 /*
-  NAVBAR CSS
+    NAVBAR CSS
 */
 
 .Nav {
@@ -30,16 +30,31 @@ body {
     font-size: 18px;
     font-weight: bold;
     text-decoration: none;
-    vertical-align: middle; /* doesn't work */
     width: 200px;
     height: 50px;
     background-color: cadetblue;
     border-radius: 20px;
     margin: 0 20px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.NavLink:hover {
+    font-size: 19px;
+    width: 220px;
+    height: 55px;
+    transition: 0.2s;
+}
+
+.NavLink:active {
+    font-size: 17px;
+    width: 190px;
+    height: 48px;
+    transition: 0.2s;
 }
 
 /*
-  GAMES LIST PAGE CSS
+    GAMES LIST PAGE CSS
 */
 
 .GamesListDiv {
@@ -67,5 +82,76 @@ body {
 .GamesListImageDiv a img:hover {
     width: 480px;
     height: 230px;
+    transition: 0.2s;
+}
+
+/*
+    ADD GAMES PAGE CSS
+*/
+
+.AddGameDiv {
+    width: 705px;
+    margin: 0 auto;
+}
+
+.AddGameDiv p {
+    display: flex;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+.AddGameButton,
+.AddGameDiv input,
+textarea {
+    width: 500px;
+    height: 40px;
+    border-radius: 20px;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.AddGameDiv textarea {
+    height: 100px;
+}
+
+.AddGameDiv form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 550px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.AddGameButton {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    width: 200px;
+    height: 50px;
+    background-color: cadetblue;
+    border-radius: 20px;
+    margin: 20px;
+    cursor: pointer;
+}
+
+.AddGameButton:hover {
+    background-color: rgb(105, 161, 162);
+    width: 220px;
+    height: 55px;
+    font-size: 19px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.AddGameButton:active {
+    background-color: rgb(72, 155, 156);
+    width: 190px;
+    height: 48px;
+    font-size: 17px;
+    cursor: pointer;
     transition: 0.2s;
 }
