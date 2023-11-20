@@ -27,13 +27,13 @@ Bonus:
 
 ### Homepage:
 
-[X] Navbar* (Home, Browse Games, Add Game);
+[X] Navbar* (Home, Browse Games, Add Game, etc);
 
-[ ] Some image to display;
+[X] Placeholder for image to display;
 
-[ ] Some text about the page;
+[X] Placeholder for text about the page;
 
-[ ] Footer* 
+[X] Placeholder for Footer* 
 
 
 ### Browse games page:
@@ -50,21 +50,18 @@ Bonus:
 
 ### Add game page:
 
-[ ] Form with inputs (Name, image, description, etc) + define which are required.
-
+[X]
 
 ### Edit game page:
 
-[ ] Pre-filled form with inputs to change game details;
-
-[ ] Possibly add game details/info component above.
+[X] Pre-filled form with inputs to change game details;
 
 
 ### Delete button:
 
-[ ] Delete game;
+[X] Delete game;
 
-[ ] Navigate to browse games.
+[X] Navigate to browse games.
 
 
 *applies to all pages
@@ -72,7 +69,26 @@ Bonus:
 
 ## 1.3 Task management: Trello
 
-## 1.4 (bonus) Draw some wireframes. Tools: https://whimsical.com, https://miro.com, https://excalidraw.com
+
+## 1.4 Bonus Implementations
+
+## Bonus:
+
+[ ] Ability to search games (search bar);
+
+[ ] Filter search;
+
+[ ] Responsive page;
+
+[X] Recommended page (based on highest rated);
+
+[ ] Filter search for recommended page;
+
+[ ] Favorites page (+ "Add to Favorites" button in Game details page);
+
+[ ] Change "Edit game" to show form under the game in game details page;
+
+[ ] Embed trailer in game details page.
 
 
 # 2. Backend API

@@ -9,6 +9,7 @@ import AddGamePage from './pages/AddGamePage'
 import EditGamePage from './pages/EditGamePage'
 
 import './App.css'
+import RecommendedGamesPage from './pages/RecommendedGamesPage'
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
         <Route path="/games/:gameId" element={< GameDetailsPage />} />  
         <Route path="/add" element={< AddGamePage />} />  
         <Route path="/edit/:gameId" element={< EditGamePage />} />  
+        <Route path="/recommended" element={<RecommendedGamesPage />} />
       </Routes>
       <Footer />
     </>
