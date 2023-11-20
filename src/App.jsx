@@ -10,6 +10,7 @@ import EditGamePage from './pages/EditGamePage'
 
 import './App.css'
 import RecommendedGamesPage from './pages/RecommendedGamesPage'
+import RandomGamePage from './pages/RandomGamePage'
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
         <Route path="/add" element={< AddGamePage />} />  
         <Route path="/edit/:gameId" element={< EditGamePage />} />  
         <Route path="/recommended" element={<RecommendedGamesPage />} />
+        <Route path="/random" element={<RandomGamePage />} />
       </Routes>
       <Footer />
     </>
