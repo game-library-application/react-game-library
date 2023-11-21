@@ -76,7 +76,7 @@ Bonus:
 
 [X] Ability to search games (search bar);
 
-[ ] Filter search;
+[X] Filter search;
 
 [ ] Responsive page;
 

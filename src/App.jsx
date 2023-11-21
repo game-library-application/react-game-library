@@ -9,6 +9,7 @@ import AddGamePage from './pages/AddGamePage'
 import EditGamePage from './pages/EditGamePage'
 
 import './App.css'
+import 'semantic-ui-css/semantic.min.css'
 import RecommendedGamesPage from './pages/RecommendedGamesPage'
 import RandomGamePage from './pages/RandomGamePage'
 

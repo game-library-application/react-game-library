@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Dropdown } from 'semantic-ui-react'
 import axios from "axios";
 
 const API_URL = "http://localhost:5005";
@@ -11,6 +12,23 @@ function GamesListPage() {
   const [platformsList, setPlatformsList] = useState(null)
   const [searchGames, setSearchGames] = useState("");
 
+  const priceOptions = [
+    {
+      key: "All",
+      text: "All",
+      value: "All"
+    },
+    {
+      key: "Free",
+      text: "Free",
+      value: "Free"
+    },
+    {
+      key: "Paid",
+      text: "Paid",
+      value: "Paid"
+    }
+  ]
 
   useEffect(() => {
     axios
@@ -44,7 +62,7 @@ function GamesListPage() {
     })
 
     setDisplayList(games);
-    
+
   }, [searchGames])
 
   // Populate states for filters
@@ -77,26 +95,58 @@ function GamesListPage() {
     return newArray
   }
 
-  // Handle selected filters
-  const filterPlatformHandler = (event) => {
-    if (event.target.checked) {
-      setDisplayList(gamesList.filter((elm) => {
-        return elm.platform.includes(event.target.value)
-      }))
-    } else {
-      setDisplayList(gamesList)
+  function looper(type) {
+
+    const newArray = [
+      {
+        key: "All",
+        text: "All",
+        value: "All"
+      }
+    ];
+
+    for (let i = 0; i < type.length; i++) {
+      for (let j = 0; j < type[i].length; j++) {
+        const exists = newArray.some(elm => elm.key === type[i][j])
+        if (!exists) {
+          newArray.push({
+            key: type[i][j],
+            text: type[i][j],
+            value: type[i][j]
+          })
+        }
+      }
     }
+
+    return newArray
   }
 
-  const filterGenreHandler = (event) => {
-    if (event.target.checked) {
-      setDisplayList(gamesList.filter((elm) => {
-        return elm.genre.includes(event.target.value)
-      }))
-    } else {
-      setDisplayList(gamesList)
-    }
+  // Handle selected filters
+  const filterGenreHandler = (event, data) => {
+    setDisplayList(gamesList.filter((elm) => {
+      return elm.genre.includes(data.value)
+    }))
+    if (data.value === "All") setDisplayList(gamesList)
   }
+
+  const filterPlatformHandler = (event, data) => {
+    setDisplayList(gamesList.filter((elm) => {
+      return elm.platform.includes(data.value)
+    }))
+    if (data.value === "All") setDisplayList(gamesList)
+  }
+
+  const filterPriceHandler = (event, data) => {
+    if (data.value === "Free") setDisplayList(gamesList.filter(elm => {
+      return !elm.price
+    }))
+    if (data.value === "Paid") setDisplayList(gamesList.filter(elm => {
+      return elm.price
+    }))
+    if (data.value === "All") setDisplayList(gamesList)
+
+  }
+
 
   return (
     <>
@@ -108,53 +158,41 @@ function GamesListPage() {
           onChange={handleSearch}
         />
       </div>
-      <div className="FilterOptionsDiv">
-        Genres
-        <div className="GenresDiv">
-          {genresList === null
-            ? <h3>Loading...</h3>
-            : (
-              genresList.map((genre, index) => {
-                return (
-                  <span className="GenresCheckbox" key={index}>
-                    <label>
-                      {genre}
-                      <input
-                        type="checkbox"
-                        onChange={filterGenreHandler}
-                        value={genre}
-                      />
-                    </label>
-                  </span>
-                )
-              })
-            )
-          }
-        </div>
+      <div>
+        <label>
+          Genres
+          <Dropdown
+            placeholder='Select Genre'
+            fluid={false}
+            selection
+            onChange={filterGenreHandler}
+            options={genresList}
+          />
+        </label>
       </div>
-      <div className="FilterOptionsDiv">
-        Platforms
-        <div className="GenresDiv">
-          {platformsList === null
-            ? <h3>Loading...</h3>
-            : (
-              platformsList.map((platform, index) => {
-                return (
-                  <span className="GenresCheckbox" key={index}>
-                    <label>
-                      {platform}
-                      <input
-                        type="checkbox"
-                        onChange={filterPlatformHandler}
-                        value={platform}
-                      />
-                    </label>
-                  </span>
-                )
-              })
-            )
-          }
-        </div>
+      <div>
+        <label>
+          Platforms
+          <Dropdown
+            placeholder='Select Platform'
+            fluid={false}
+            selection
+            onChange={filterPlatformHandler}
+            options={platformsList}
+          />
+        </label>
+      </div>
+      <div>
+        <label>
+          Price
+          <Dropdown
+            placeholder='Select Platform'
+            fluid={false}
+            selection
+            onChange={filterPriceHandler}
+            options={priceOptions}
+          />
+        </label>
       </div>
       <div className="GamesListDiv">
         {displayList === null ? (
