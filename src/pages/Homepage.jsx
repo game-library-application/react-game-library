@@ -1,12 +1,14 @@
 function Homepage() {
-
-    return (
-        <div className="HomepageDiv">
-            <h1 className="HomepageTitle">Welcome to your favorite Game Library</h1>
-            <img src="https://www.pulsecarshalton.co.uk/wp-content/uploads/2016/08/jk-placeholder-image.jpg" alt="Some image is supposed to go here" className="HomepageImage"/>
-            <p className="HomepageDescription">Some text goes here...</p>
-        </div>
-    )
+  return (
+      <div className="HomepageDiv HomepageBG">
+        <h1 className="HomepageTitle">WELCOME TO YOUR FAVORITE GAME LIBRARY</h1>
+        <p className="HomepageDescription">
+          Explore a world of gaming excitement with our diverse and curated game
+          library. Whether you're a seasoned gamer or just starting, find the
+          perfect match for your preferences.
+        </p>
+      </div>
+      );
 }
 
-export default Homepage
+export default Homepage;

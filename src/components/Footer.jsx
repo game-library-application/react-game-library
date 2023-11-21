@@ -1,6 +1,6 @@
 function Footer() {
 
-    return <footer>Footer</footer>
+    return <footer>© 2023 | GAMEHUB</footer>
 }
 
 export default Footer
