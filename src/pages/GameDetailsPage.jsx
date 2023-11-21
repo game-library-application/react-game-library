@@ -31,24 +31,30 @@ function GameDetailsPage() {
         navigate("/games");
       })
       .catch((error) => {
-        console.log("Something went wrong while trying to delete");
-        console.log(error);
+        console.log("Error: ", error);
       });
   };
 
   return (
     <div>
-      <h1>Game Info</h1>
-      {gameDetails === null ? (
-        <h1>Loading...</h1>
-      ) : (
-        <GameInfo game={gameDetails} />
-      )}
-      <Link to={`/edit/${gameId}`}>
-        <button>Edit</button>
-      </Link>
+      <div className="GameInfoContainer">
+        <div className="GameInfoDetails">
+          {gameDetails === null ? (
+            <h1>Loading...</h1>
+          ) : (
+            <GameInfo game={gameDetails} />
+          )}
+          <div className="GameInfoButtons">
+            <Link to={`/edit/${gameId}`}>
+              <button className="EditButton">Edit</button>
+            </Link>
 
-      <button onClick={deleteGame}>Delete</button>
+            <button onClick={deleteGame} className="DeleteButton">
+              Delete
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@600&family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@600&family=Open+Sans:wght@300;400&display=swap");
 
 body {
   text-align: center;
@@ -13,13 +13,17 @@ body {
   flex-direction: row;
   background-color: #1f1e22;
   background-image: url("./assets/bg-gamehub.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   background-attachment: fixed;
 }
 
 #main {
   width: 100%;
   height: 100vh;
-  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
 }
 
 /* SIDEBAR CSS */
@@ -45,14 +49,14 @@ body {
 }
 
 .Gamehub {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    margin: 30px;
-    font-family: "League Spartan", sans-serif;
-    font-size: 2rem;
-    color: white;
-    padding-bottom: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin: 30px;
+  font-family: "League Spartan", sans-serif;
+  font-size: 2rem;
+  color: white;
+  padding-bottom: 5vh;
 }
 
 .icon {
@@ -73,20 +77,17 @@ body {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* 
-    HOMEPAGE CSS 
- */
+/* HOMEPAGE CSS */
 
 .HomepageDiv {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 .HomepageBG {
-
   background-size: cover;
   background-position: center;
 }
@@ -128,6 +129,7 @@ body {
   display: flex;
   width: 460px;
   height: 215px;
+  object-fit: cover;
   border-radius: 30px;
   transition: 0.2s;
 }
@@ -136,6 +138,134 @@ body {
   width: 480px;
   height: 230px;
   transition: 0.2s;
+}
+
+/* EDIT GAME PAGE CSS*/
+
+.GameInfoContainer {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  margin: 10vw 1vw 0;
+  border-radius: 30px;
+}
+
+.GameInfoDetails {
+  color: white;
+}
+.GameInfoDetails h1 {
+  position: absolute;
+  color: white;
+  font-family: "League Spartan", sans-serif;
+  text-transform: uppercase;
+  font-size: 60px;
+  top: 13vh;
+}
+
+.GameInfoDetails h3 {
+  color: white;
+  font-family: "League Spartan", sans-serif;
+  font-size: 1.8em;
+}
+
+.GameInfoDetails p {
+  color: white;
+  font-family: "Open Sans", sans-serif;
+}
+
+.GameInfoDetails img {
+  display: flex;
+  border-radius: 30px;
+  width: 460px;
+  height: auto;
+}
+
+.GameInfoButtons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.GameInfoButtons Button {
+  color: white;
+  font-size: 1.4em;
+  font-family: "Open Sans", sans-serif;
+  border-radius: 10px;
+  border: none;
+  margin-left: 15px;
+}
+
+.ImageDescription {
+  display: flex;
+  flex-wrap: wrap;
+  width: 460px;
+}
+
+.Description {
+  padding-top: 15px;
+  font-size: 1.4rem;
+  text-align: justify;
+  font-weight: 300;
+}
+
+.StatisticsDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.RatingPrice {
+  padding-left: 10px;
+  text-align: left;
+}
+
+.GenrePlatformButtons Button {
+  background-color: #351a79;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 7px 15px;
+  margin-right: 10px;
+}
+
+.GenrePlatformButtons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 10px;
+}
+
+.AllGameInfo {
+  display: flex;
+}
+
+.hr {
+  border-right: 1px solid #351a79;
+  padding: 0 5px;
+}
+
+.EditButton {
+  background-color: #00bf63;
+  padding: 5px 32px;
+}
+.InfoValue {
+  margin: 5px !important;
+  font-size: 1.2em;
+  margin-bottom: 15px !important;
+}
+
+.NoMargin {
+  margin: 0;
+}
+.InfoValue.noMarginLeft {
+  margin-left: 0px !important;
+}
+
+.DeleteButton {
+  background-color: #ff3131;
+  padding: 5px 20px;
+}
+
+.GameInfoButtons Button:hover {
+  cursor: pointer;
 }
 
 /*
@@ -207,4 +337,16 @@ textarea {
   font-size: 17px;
   cursor: pointer;
   transition: 0.2s;
+}
+
+/* FOOTER */
+
+Footer {
+  text-align: right;
+  color: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin-right: 15px;
+  margin-bottom: 3px;
 }

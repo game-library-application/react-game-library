@@ -164,6 +164,7 @@ function AddGamePage() {
                         fluid={false}
                         multiple
                         selection
+                        required={true}
                         onChange={handleGenreSelection}
                         options={genresList}
                     />
@@ -175,6 +176,7 @@ function AddGamePage() {
                         fluid={false}
                         multiple
                         selection
+                        required={true}
                         onChange={handlePlatformSelection}
                         options={platformsList}
                     />

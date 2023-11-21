@@ -3,7 +3,7 @@ import axios from "axios";
 import GameInfo from "../components/GameInfo";
 
 function RandomGamePage() {
-  const [randomGame, setRandomGame] = useState(null)
+  const [randomGame, setRandomGame] = useState(null);
 
   const API_URL = "http://localhost:5005";
 
@@ -11,7 +11,9 @@ function RandomGamePage() {
     axios
       .get(`${API_URL}/games/`)
       .then((response) => {
-        setRandomGame(response.data[Math.floor(Math.random() * response.data.length)])
+        setRandomGame(
+          response.data[Math.floor(Math.random() * response.data.length)]
+        );
       })
       .catch((error) => {
         console.log("Error: ");
@@ -20,12 +22,16 @@ function RandomGamePage() {
   }, []);
 
   return (
-    <div className="RandomGameDiv">
-      {randomGame === null ? (
-        <h1>Loading...</h1>
-      ) : (
-        <GameInfo game={randomGame} />
-      )}
+    <div className="GameInfoContainer">
+      <div className="GameInfoDetails">
+      <div className="RandomGameDiv">
+        {randomGame === null ? (
+          <h1>Loading...</h1>
+        ) : (
+          <GameInfo game={randomGame} />
+        )}
+      </div>
+      </div>
     </div>
   );
 }
