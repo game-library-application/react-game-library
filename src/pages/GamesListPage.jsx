@@ -83,20 +83,6 @@ function GamesListPage() {
 
   function looper(type) {
 
-    const newArray = [];
-
-    for (let i = 0; i < type.length; i++) {
-      for (let j = 0; j < type[i].length; j++) {
-        if (newArray.indexOf(type[i][j]) === -1) {
-          newArray.push(type[i][j])
-        }
-      }
-    }
-    return newArray
-  }
-
-  function looper(type) {
-
     const newArray = [
       {
         key: "All",
@@ -117,7 +103,6 @@ function GamesListPage() {
         }
       }
     }
-
     return newArray
   }
 
@@ -144,9 +129,7 @@ function GamesListPage() {
       return elm.price
     }))
     if (data.value === "All") setDisplayList(gamesList)
-
   }
-
 
   return (
     <>
@@ -158,42 +141,45 @@ function GamesListPage() {
           onChange={handleSearch}
         />
       </div>
-      <div>
-        <label>
-          Genres
-          <Dropdown
-            placeholder='Select Genre'
-            fluid={false}
-            selection
-            onChange={filterGenreHandler}
-            options={genresList}
-          />
-        </label>
+      <div className="DropdownDiv"> // Fazer flex disto em row?
+        <div>
+          <label>
+            Genres
+            <Dropdown
+              placeholder='Select Genre'
+              fluid={false}
+              selection
+              onChange={filterGenreHandler}
+              options={genresList}
+            />
+          </label>
+        </div>
+        <div>
+          <label>
+            Platforms
+            <Dropdown
+              placeholder='Select Platform'
+              fluid={false}
+              selection
+              onChange={filterPlatformHandler}
+              options={platformsList}
+            />
+          </label>
+        </div>
+        <div>
+          <label>
+            Price
+            <Dropdown
+              placeholder='Select Platform'
+              fluid={false}
+              selection
+              onChange={filterPriceHandler}
+              options={priceOptions}
+            />
+          </label>
+        </div>
       </div>
-      <div>
-        <label>
-          Platforms
-          <Dropdown
-            placeholder='Select Platform'
-            fluid={false}
-            selection
-            onChange={filterPlatformHandler}
-            options={platformsList}
-          />
-        </label>
-      </div>
-      <div>
-        <label>
-          Price
-          <Dropdown
-            placeholder='Select Platform'
-            fluid={false}
-            selection
-            onChange={filterPriceHandler}
-            options={priceOptions}
-          />
-        </label>
-      </div>
+
       <div className="GamesListDiv">
         {displayList === null ? (
           <h1>Game list loading...</h1>

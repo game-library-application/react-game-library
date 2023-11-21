@@ -85,7 +85,7 @@ function AddGamePage() {
             rating: parseFloat(rating),
             price: parseFloat(price),
             genre: genre,
-            platform: platform,//SplitString(platform),
+            platform: platform,
             image_url: imageUrl,
             free: (price <= 0 ? true : false)
         }
@@ -108,15 +108,6 @@ function AddGamePage() {
     const handleGenreSelection = (event, data) => {
         setGenre(data.value)
     }
-
-    /* function SplitString(inputString) {
-
-        if (inputString.length === 0) return [];
-
-        const outputArray = inputString.split(',')
-
-        return outputArray;
-    } */
 
     return (
         <div className="FormDiv">
@@ -166,17 +157,6 @@ function AddGamePage() {
                         onChange={(e) => { setPrice(e.target.value) }}
                     />
                 </label>
-                {/* <label>
-                    <p>Genre(s)</p>
-                    <input
-                        type="text"
-                        name="genre"
-                        required={true}
-                        value={genre}
-                        placeholder="Separate genres with a comma"
-                        onChange={(e) => { setGenre(e.target.value) }}
-                    />
-                </label> */}
                 <label>
                     Genres
                     <Dropdown
@@ -199,19 +179,6 @@ function AddGamePage() {
                         options={platformsList}
                     />
                 </label>
-
-
-                {/* <label>
-                    <p>Platform(s)</p>
-                    <input
-                        type="text"
-                        name="platform"
-                        required={true}
-                        value={platform}
-                        placeholder="Separate platforms with a comma"
-                        onChange={(e) => { setPlatform(e.target.value) }}
-                    />
-                </label> */}
                 <label>
                     <p>Image URL</p>
                     <input
