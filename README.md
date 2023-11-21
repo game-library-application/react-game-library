@@ -50,7 +50,7 @@ Bonus:
 
 ### Add game page:
 
-[X]
+[X] Form with inputs (Name, image, description, etc) + define which are required.
 
 ### Edit game page:
 
@@ -74,15 +74,13 @@ Bonus:
 
 ## Bonus:
 
-[ ] Ability to search games (search bar);
+[X] Ability to search games (search bar);
 
 [ ] Filter search;
 
 [ ] Responsive page;
 
 [X] Recommended page (based on highest rated);
-
-[ ] Filter search for recommended page;
 
 [ ] Favorites page (+ "Add to Favorites" button in Game details page);
 
