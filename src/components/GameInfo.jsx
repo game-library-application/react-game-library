@@ -20,21 +20,30 @@ function GameInfo(props) {
           <div className="GenrePlatformButtons">
             <h3 className="NoMargin">GENRE</h3>
             <div className="InfoValue noMarginLeft">
-            {props.game.genre.map((genre, index) => (
-              <button key={index} className="GenreButton">
-                {genre}
-              </button>
-            ))}
+              {props.game.genre.length <= 0
+                ? <p>No genres</p>
+                : (props.game.genre.map((genre, index) => (
+                  <button key={index} className="GenreButton">
+                    {genre}
+                  </button>
+                )))}
+
             </div>
             <h3 className="NoMargin">PLATFORM</h3>
             <div className="InfoValue noMarginLeft">
-            {props.game.platform.map((platform, index) => (
-              <button key={index} className="PlatformButton">
-                {platform}
-              </button>
-            ))}
+              {props.game.platform.length <= 0
+                ? <p>No platforms</p>
+                : (props.game.platform.map((platform, index) => (
+                  <button key={index} className="PlatformButton">
+                    {platform}
+                  </button>
+                )))}
+
             </div>
           </div>
+        </div>
+        <div className="GameImages">
+
         </div>
       </div>
     </div>
