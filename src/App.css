@@ -115,11 +115,16 @@ body {
 display: flex;
 }
 
+.GamehubPage{
+  font-family: "League Spartan", sans-serif;
+  color: rgba(53, 26, 121, 0.6);
+  font-size: 4rem;
+}
+
 .GamesListDiv {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 50px 50px;
 }
 
 .GamesListImageDiv {
@@ -202,9 +207,16 @@ display: flex;
 
 .SearchBarDiv {
   justify-content: flex-end;
-  
 }
 
+.TitleRecommended {
+  color: white;
+  font-family: "League Spartan", sans-serif;
+  margin-top: 30px;
+}
+.TitleRecommended h1 {
+  font-size: 3rem;
+}
 /* TESTING TESTING TESTING */
 
 /*** STYLES ***/
