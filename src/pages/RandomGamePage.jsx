@@ -5,7 +5,7 @@ import GameInfo from "../components/GameInfo";
 function RandomGamePage() {
   const [randomGame, setRandomGame] = useState(null);
 
-  const API_URL = "http://localhost:5005";
+  const API_URL = "https://api-json-server.adaptable.app";
 
   useEffect(() => {
     axios
