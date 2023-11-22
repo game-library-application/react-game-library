@@ -108,105 +108,141 @@ function AddGamePage() {
   };
 
   return (
-    <div className="InputsContainer">
-      <div className="AddGameDiv">
-        <h1>ADD GAME</h1>
-        <form onSubmit={handleSubmit}>
-          <label className="TitleLabel">
-            <p>Title</p>
-            <input
-              type="text"
-              name="title"
-              required={true}
-              value={title}
-              onChange={(e) => {
-                setTitle(e.target.value);
-              }}
-            />
-          </label>
-          <label className="DescriptionLabel">
-            <p>Description</p>
-            <textarea
-              type="text"
-              name="description"
-              required={true}
-              value={description}
-              onChange={(e) => {
-                setDescription(e.target.value);
-              }}
-            />
-          </label>
-          <div className="RatingPriceInputs">
-            <label className="RatingLabel">
-              <p>Rating</p>
+    <div className="test">
+      <div className="InputsContainer">
+        <div className="AddGameDiv">
+          <h1>ADD GAME</h1>
+          <form onSubmit={handleSubmit}>
+            <label className="TitleLabel">
+              <p>Title</p>
               <input
-                type="number"
-                name="rating"
+                type="text"
+                name="title"
                 required={true}
-                min={0}
-                max={10}
-                step=".01"
-                value={rating}
+                value={title}
                 onChange={(e) => {
-                  setRating(e.target.value);
+                  setTitle(e.target.value);
                 }}
               />
             </label>
-            <label className="PriceLabel">
-              <p>Price</p>
-              <input
-                type="number"
-                name="price"
+            <label className="DescriptionLabel">
+              <p>Description</p>
+              <textarea
+                type="text"
+                name="description"
                 required={true}
-                min={0}
-                step=".01"
-                value={price}
+                value={description}
                 onChange={(e) => {
-                  setPrice(e.target.value);
+                  setDescription(e.target.value);
                 }}
               />
             </label>
-          </div>
-          <div className="DropdownInput">
-            <label className="GenreLabel">
-              <p>Genres</p>
-              <Dropdown
-                placeholder="GENRES"
-                fluid={false}
-                multiple
-                selection
+            <div className="RatingPriceInputs">
+              <label className="RatingLabel">
+                <p>Rating</p>
+                <input
+                  type="number"
+                  name="rating"
+                  required={true}
+                  min={0}
+                  max={10}
+                  step=".01"
+                  value={rating}
+                  onChange={(e) => {
+                    setRating(e.target.value);
+                  }}
+                />
+              </label>
+              <label className="PriceLabel">
+                <p>Price</p>
+                <input
+                  type="number"
+                  name="price"
+                  required={true}
+                  min={0}
+                  step=".01"
+                  value={price}
+                  onChange={(e) => {
+                    setPrice(e.target.value);
+                  }}
+                />
+              </label>
+            </div>
+            <div className="DropdownInput">
+              <label className="GenreLabel">
+                <p>Genres</p>
+                <Dropdown
+                  placeholder="GENRES"
+                  fluid={false}
+                  multiple
+                  selection
+                  required={true}
+                  onChange={handleGenreSelection}
+                  options={genresList}
+                />
+              </label>
+              <label className="PlatformLabel">
+                <p>Platforms</p>
+                <Dropdown
+                  placeholder="PLATFORMS"
+                  fluid={false}
+                  multiple
+                  selection
+                  required={true}
+                  onChange={handlePlatformSelection}
+                  options={platformsList}
+                />
+              </label>
+            </div>
+            <label className="ImageLabel">
+              <p>Image URL</p>
+              <input
+                type="text"
+                name="image_url"
                 required={true}
-                onChange={handleGenreSelection}
-                options={genresList}
+                value={imageUrl}
+                onChange={(e) => {
+                  setImageUrl(e.target.value);
+                }}
               />
             </label>
-            <label className="PlatformLabel">
-              <p>Platforms</p>
-              <Dropdown
-                placeholder="PLATFORMS"
-                fluid={false}
-                multiple
-                selection
-                required={true}
-                onChange={handlePlatformSelection}
-                options={platformsList}
-              />
-            </label>
+            <button className="AddGameButton">Add Game</button>
+          </form>
+        </div>
+        <div className="PageContainer">
+          <h1 className="TitleAdd">TITLE</h1>
+          <div className="GameAddContainer">
+            <div className="InfoDiv">
+              <div className="ImageDescriptionDiv">
+                <div className="ImageAdd"></div>
+                <p>Brief description about the game...</p>
+              </div>
+              <div className="hr"></div>
+              <div className="StatisticsAdd">
+                <div className="PlatformGenreAdd">
+                  <h3>PLATFORMS</h3>
+                  <div className="ButtonsAdd">
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                  </div>
+                  <h3>GENRES</h3>
+                  <div className="ButtonsAdd">
+                    <button></button>
+                    <button></button>
+                  </div>
+                </div>
+                <div className="RatingPriceAdd">
+                  <h3>RATING</h3>
+                  <p>?/10</p>
+                  <h3>PRICE</h3>
+                  <p>? €</p>
+                </div>
+              </div>
+            </div>
           </div>
-          <label className="ImageLabel">
-            <p>Image URL</p>
-            <input
-              type="text"
-              name="image_url"
-              required={true}
-              value={imageUrl}
-              onChange={(e) => {
-                setImageUrl(e.target.value);
-              }}
-            />
-          </label>
-          <button className="AddGameButton">Add Game</button>
-        </form>
+        </div>
       </div>
     </div>
   );

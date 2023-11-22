@@ -12,7 +12,6 @@ body {
   display: flex;
   flex-direction: row;
   background-color: #1f1e22;
-  background-image: url("./assets/bg-gamehub.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -78,6 +77,10 @@ body {
 }
 
 /* HOMEPAGE CSS */
+
+.HomepageBG {
+  background-image: url("./assets/bg-gamehub.jpg");
+}
 
 .HomepageDiv {
   width: 100%;
@@ -154,6 +157,7 @@ body {
 .GameInfoDetails {
   color: white;
 }
+
 .GameInfoDetails h1 {
   position: absolute;
   color: white;
@@ -287,12 +291,26 @@ body {
 
 /* ADD GAMES PAGE CSS */
 
+.PageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.TitleAdd {
+  font-family: "League Spartan", sans-serif;
+  color: white;
+  font-size: 4rem;
+  margin-right: 40px;
+}
+
 .InputsContainer {
   display: flex;
-  width: 100%;
-  height: 100%;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: center;
   margin-left: 5vw;
+  height: 100vh;
 }
 
 .AddGameDiv {
@@ -314,6 +332,7 @@ body {
   font-family: "League Spartan", sans-serif;
   color: white;
   font-size: 4rem;
+  margin-bottom: 20px;
 }
 
 .AddGameDiv input,
@@ -351,6 +370,71 @@ textarea {
   display: flex;
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
+}
+
+.GameAddContainer {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  margin: 1vw;
+  border-radius: 30px;
+  color: white;
+}
+.InfoDiv {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.ImageAdd {
+  background-color: #351a79;
+  width: 460px;
+  height: 216px;
+  border-radius: 30px;
+}
+
+.GameAddContainer h1 {
+  color: white;
+  font-family: "League Spartan", sans-serif;
+  text-transform: uppercase;
+  font-size: 60px;
+}
+
+.ImageDescriptionDiv {
+  padding-top: 15px;
+  font-size: 1.4rem;
+  font-weight: 300;
+  text-align: start;
+  margin-left: 10px;
+}
+
+.StatisticsAdd {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.PlatformGenreAdd Button {
+  background-color: #351a79;
+  border: none;
+  border-radius: 5px;
+  padding: 20px 45px;
+  margin-left: 10px;
+}
+
+.ButtonsAdd {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.PlatformGenreAdd {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.RatingPriceAdd {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 /* FOOTER */
