@@ -121,7 +121,7 @@ body {
   align-items: center;
   width: 460px;
   height: 215px;
-  
+
   border-radius: 30px;
   margin: 30px 30px;
 }
@@ -142,7 +142,7 @@ body {
   transition: 0.2s;
 }
 
-/* EDIT GAME PAGE CSS*/
+/* GAME INFO PAGE CSS*/
 
 .GameInfoContainer {
   background-color: rgba(0, 0, 0, 0.7);
@@ -285,75 +285,72 @@ body {
   cursor: pointer;
 }
 
-/*
-    ADD GAMES PAGE CSS
-*/
+/* ADD GAMES PAGE CSS */
+
+.InputsContainer {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  margin-left: 5vw;
+}
 
 .AddGameDiv {
-  width: 705px;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .AddGameDiv p {
+  font-family: "League Spartan", sans-serif;
+  color: white;
   display: flex;
-  font-size: 16px;
+  font-size: 2rem;
   font-weight: bold;
   margin-bottom: 10px;
-  margin-left: 10px;
 }
 
-.FormButton,
-.FormDiv input,
+.AddGameDiv h1 {
+  font-family: "League Spartan", sans-serif;
+  color: white;
+  font-size: 4rem;
+}
+
+.AddGameDiv input,
 textarea {
-  width: 500px;
-  height: 40px;
-  border-radius: 20px;
-  font-size: 14px;
-  transition: 0.2s;
+  display: flex;
+  border: none;
+  height: 4vh;
+  width: 195px;
+  border-radius: 5px;
 }
 
-.FormDiv textarea {
-  height: 100px;
-}
-
-.FormDiv form {
+.DropdownInput {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 550px;
-  height: auto;
-  margin: 0 auto;
+  align-items: flex-start;
 }
 
-.FormButton {
+.TitleLabel,
+.DescriptionLabel,
+.RatingLabel,
+.PriceLabel,
+.GenreLabel,
+.PlatformLabel,
+.ImageLabel {
+  margin-bottom: 5px;
+}
+
+.AddGameButton {
+  background-color: #00bf63;
+  border: none;
   color: white;
-  font-size: 18px;
-  font-weight: bold;
-  text-decoration: none;
-  width: 200px;
-  height: 50px;
-  background-color: cadetblue;
-  border-radius: 20px;
-  margin: 20px;
-  cursor: pointer;
-}
-
-.FormButton:hover {
-  background-color: rgb(105, 161, 162);
-  width: 220px;
-  height: 55px;
-  font-size: 19px;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.FormButton:active {
-  background-color: rgb(72, 155, 156);
-  width: 190px;
-  height: 48px;
-  font-size: 17px;
-  cursor: pointer;
-  transition: 0.2s;
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin-top: 20px;
+  display: flex;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
 }
 
 /* FOOTER */
