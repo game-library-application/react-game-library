@@ -1,7 +1,7 @@
 function GameInfo(props) {
   return (
     <div>
-      <h1>{props.game.title}</h1>
+      <h1 className="GameInfoTitle">{props.game.title}</h1>
       <div className="AllGameInfo">
         <div className="ImageDescription">
           <img src={props.game.image_url} />
