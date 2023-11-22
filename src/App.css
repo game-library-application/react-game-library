@@ -385,10 +385,12 @@ textarea {
   border-radius: 30px;
   color: white;
 }
+
 .InfoDiv {
   display: flex;
   flex-direction: row-reverse;
 }
+
 .ImageAdd {
   background-color: #351a79;
   width: 460px;
@@ -407,8 +409,10 @@ textarea {
   padding-top: 15px;
   font-size: 1.4rem;
   font-weight: 300;
-  text-align: start;
   margin-left: 10px;
+  text-align: justify;
+  width: 470px;
+  word-wrap: break-word;
 }
 
 .StatisticsAdd {
@@ -421,8 +425,9 @@ textarea {
   background-color: #351a79;
   border: none;
   border-radius: 5px;
-  padding: 20px 45px;
+  padding: 10px 20px;
   margin-left: 10px;
+  color: white;
 }
 
 .ButtonsAdd {

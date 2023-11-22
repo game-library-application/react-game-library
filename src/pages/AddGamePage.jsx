@@ -210,34 +210,55 @@ function AddGamePage() {
           </form>
         </div>
         <div className="PageContainer">
-          <h1 className="TitleAdd">TITLE</h1>
+          <h1 className="TitleAdd">
+            {title.toUpperCase() === "" ? "TITLE" : title.toUpperCase()}
+          </h1>
           <div className="GameAddContainer">
             <div className="InfoDiv">
               <div className="ImageDescriptionDiv">
-                <div className="ImageAdd"></div>
-                <p>Brief description about the game...</p>
+                <div className="ImageAdd">
+                  {imageUrl === "" ? (
+                    ""
+                    ) : (
+                    <img src={imageUrl} 
+                    style={{width:"460px", height:"216px", objectFit:"cover", borderRadius:"30px"}}/>
+                  )}
+                </div>
+                <p>
+                  {description === ""
+                    ? "Brief description about the game..."
+                    : description}
+                </p>
               </div>
               <div className="hr"></div>
               <div className="StatisticsAdd">
                 <div className="PlatformGenreAdd">
                   <h3>PLATFORMS</h3>
                   <div className="ButtonsAdd">
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
+                    {platform === "" ? (
+                      <p>No platforms</p>
+                    ) : (
+                      platform.map((platform, index) => (
+                        <button key={index}>{platform}</button>
+                      ))
+                    )}
                   </div>
                   <h3>GENRES</h3>
                   <div className="ButtonsAdd">
-                    <button></button>
-                    <button></button>
+                    {genre === "" ? (
+                      <p>No genres</p>
+                    ) : (
+                      genre.map((genre, index) => (
+                        <button key={index}>{genre}</button>
+                      ))
+                    )}
                   </div>
                 </div>
                 <div className="RatingPriceAdd">
                   <h3>RATING</h3>
-                  <p>?/10</p>
+                  <p>{rating === "" ? "?/10" : rating}/10</p>
                   <h3>PRICE</h3>
-                  <p>? €</p>
+                  <p>{price === "" ? "? €" : price} €</p>
                 </div>
               </div>
             </div>
