@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import GameInfo from "../components/GameInfo";
 import axios from "axios";
 
-function EditGamePage() {
+function EditGamePage(props) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [rating, setRating] = useState("");
@@ -51,7 +52,7 @@ function EditGamePage() {
       images: images,
     };
 
-    console.log(images)
+    console.log(images);
 
     axios
       .put(`${API_URL}/games/${gameId}`, requestBody)
@@ -71,99 +72,101 @@ function EditGamePage() {
   }
 
   function pushImages(input) {
-
     if (input.length <= 0) return [];
 
-    let temp = []
+    let temp = [];
 
-    temp.push(input)
+    temp.push(input);
 
-    return temp
-
+    return temp;
   }
 
   return (
     <>
-      <h1>Editing Game</h1>
-      <div className="FormDiv">
-        <form onSubmit={handleSubmit}>
-          <label>
-            <p>Title</p>
-            <input
-              type="text"
-              name="title"
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-            />
-          </label>
-          <label>
-            <p> Description</p>
-            <textarea
-              name="description"
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-            />
-          </label>
-          <label>
-            <p>Rating</p>
-            <input
-              type="number"
-              name="rating"
-              min={1}
-              max={10}
-              step=".01"
-              value={rating}
-              onChange={(e) => setRating(e.target.value)}
-            />
-          </label>
-          <label>
-            <p>Genre</p>
-            <input
-              type="text"
-              name="genre"
-              value={genre}
-              onChange={(e) => setGenre(e.target.value)}
-            />
-          </label>
-          <label>
-            <p>Price</p>
-            <input
-              type="number"
-              name="price"
-              step=".01"
-              value={price}
-              onChange={(e) => setPrice(e.target.value)}
-            />
-          </label>
-          <label>
-            <p>Platform</p>
-            <input
-              type="text"
-              name="platform"
-              value={platform}
-              onChange={(e) => setPlatform(e.target.value)}
-            />
-          </label>
-          <label>
-            <p>Image</p>
-            <input
-              type="text"
-              name="image"
-              value={image}
-              onChange={(e) => setImage(e.target.value)}
-            />
-          </label>
-          <label>
-            <p>Game Images</p>
-            <input
-              type="text"
-              name="images"
-              value={images}
-              onChange={(e) => setImages(pushImages(e.target.value))}
-            />
-          </label>
-          <button className="FormButton">Update</button>
-        </form>
+      <div className="InputsContainer">
+        <div className="AddGameDiv">
+          <h1>EDIT GAME</h1>
+          <div className="FormDiv">
+            <form onSubmit={handleSubmit}>
+              <label>
+                <p>Title</p>
+                <input
+                  type="text"
+                  name="title"
+                  value={title}
+                  onChange={(e) => setTitle(e.target.value)}
+                />
+              </label>
+              <label>
+                <p> Description</p>
+                <textarea
+                  name="description"
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
+                />
+              </label>
+              <label>
+                <p>Rating</p>
+                <input
+                  type="number"
+                  name="rating"
+                  min={1}
+                  max={10}
+                  step=".01"
+                  value={rating}
+                  onChange={(e) => setRating(e.target.value)}
+                />
+              </label>
+              <label>
+                <p>Genre</p>
+                <input
+                  type="text"
+                  name="genre"
+                  value={genre}
+                  onChange={(e) => setGenre(e.target.value)}
+                />
+              </label>
+              <label>
+                <p>Price</p>
+                <input
+                  type="number"
+                  name="price"
+                  step=".01"
+                  value={price}
+                  onChange={(e) => setPrice(e.target.value)}
+                />
+              </label>
+              <label>
+                <p>Platform</p>
+                <input
+                  type="text"
+                  name="platform"
+                  value={platform}
+                  onChange={(e) => setPlatform(e.target.value)}
+                />
+              </label>
+              <label>
+                <p>Image</p>
+                <input
+                  type="text"
+                  name="image"
+                  value={image}
+                  onChange={(e) => setImage(e.target.value)}
+                />
+              </label>
+              <label>
+                <p>Game Images</p>
+                <input
+                  type="text"
+                  name="images"
+                  value={images}
+                  onChange={(e) => setImages(pushImages(e.target.value))}
+                />
+              </label>
+              <button className="UpdateButton">Update</button>
+            </form>
+          </div>
+        </div>
       </div>
     </>
   );

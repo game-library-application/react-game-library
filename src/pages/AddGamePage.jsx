@@ -108,7 +108,7 @@ function AddGamePage() {
   };
 
   return (
-    <div className="test">
+    <div>
       <div className="InputsContainer">
         <div className="AddGameDiv">
           <h1>ADD GAME</h1>
