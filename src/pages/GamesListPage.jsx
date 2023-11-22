@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Dropdown } from 'semantic-ui-react'
+import Select from "react-select"
 import axios from "axios";
 
 const API_URL = "https://api-json-server.adaptable.app";
@@ -12,20 +12,23 @@ function GamesListPage() {
   const [platformsList, setPlatformsList] = useState(null)
   const [searchGames, setSearchGames] = useState("");
 
+  const allOptions =
+  {
+    label: "All",
+    value: "All"
+  }
+
   const priceOptions = [
     {
-      key: "All",
-      text: "All",
+      label: "All",
       value: "All"
     },
     {
-      key: "Free",
-      text: "Free",
+      label: "Free",
       value: "Free"
     },
     {
-      key: "Paid",
-      text: "Paid",
+      label: "Paid",
       value: "Paid"
     }
   ]
@@ -69,35 +72,39 @@ function GamesListPage() {
   function getGenres(data) {
 
     const allGenres = data.map((elm) => elm.genre)
-    const genres = looper(allGenres);
-
+    const temp = looper(allGenres);
+    const genres = sortObject(temp)
+    genres.unshift(allOptions)
     return genres
   }
 
   function getPlatforms(data) {
 
     const allPlatforms = data.map((elm) => elm.platform)
-    const platforms = looper(allPlatforms);
+    let temp = looper(allPlatforms);
+    const platforms = sortObject(temp);
+    platforms.unshift(allOptions)
+
     return platforms
+  }
+
+  // Function to sort Genre and Platform alphabetically
+  function sortObject(data) {
+    return data.sort((a, b) => {
+      return a.value.localeCompare(b.value)
+    })
   }
 
   function looper(type) {
 
-    const newArray = [
-      {
-        key: "All",
-        text: "All",
-        value: "All"
-      }
-    ];
+    const newArray = []
 
     for (let i = 0; i < type.length; i++) {
       for (let j = 0; j < type[i].length; j++) {
-        const exists = newArray.some(elm => elm.key === type[i][j])
+        const exists = newArray.some(elm => elm.value === type[i][j])
         if (!exists) {
           newArray.push({
-            key: type[i][j],
-            text: type[i][j],
+            label: type[i][j],
             value: type[i][j]
           })
         }
@@ -107,94 +114,140 @@ function GamesListPage() {
   }
 
   // Handle selected filters
-  const filterGenreHandler = (event, data) => {
+  const filterGenreHandler = (event) => {
     setDisplayList(gamesList.filter((elm) => {
-      return elm.genre.includes(data.value)
+      return elm.genre.includes(event.value)
     }))
-    if (data.value === "All") setDisplayList(gamesList)
+    if (event.value === "All") setDisplayList(gamesList)
   }
 
-  const filterPlatformHandler = (event, data) => {
+  const filterPlatformHandler = (event) => {
+    console.log(event.value)
     setDisplayList(gamesList.filter((elm) => {
-      return elm.platform.includes(data.value)
+      return elm.platform.includes(event.value)
     }))
-    if (data.value === "All") setDisplayList(gamesList)
+    if (event.value === "All") setDisplayList(gamesList)
   }
 
-  const filterPriceHandler = (event, data) => {
-    if (data.value === "Free") setDisplayList(gamesList.filter(elm => {
+  const filterPriceHandler = (event) => {
+    if (event.value === "Free") setDisplayList(gamesList.filter(elm => {
       return !elm.price
     }))
-    if (data.value === "Paid") setDisplayList(gamesList.filter(elm => {
+    if (event.value === "Paid") setDisplayList(gamesList.filter(elm => {
       return elm.price
     }))
-    if (data.value === "All") setDisplayList(gamesList)
+    if (event.value === "All") setDisplayList(gamesList)
+  }
+
+  const customStyles = {
+    menu: (provided) => ({
+      ...provided,
+      backgroundColor: "neutral0",
+      border: "1px solid white",
+      color: "white",
+      position: "relative"
+    }),
+    control: (provided) => ({
+      ...provided,
+      backgroundColor: "neutral0",
+      color: "white",
+      width: "200px",
+
+    }),
+    option: (provided, state) => ({
+      ...provided,
+      backgroundColor: state.isFocused || state.isHovered ? "transparent" : "transparent",
+      "&:hover": {
+        backgroundColor: "transparent",
+        border: "1px solid white"
+
+      }
+    }),
+    placeholder: (provided) => ({
+      ...provided,
+      color: "white"
+    }),
+    singleValue: (provided) => ({
+      ...provided,
+      color: "white",
+    }),
+    menuPortal: (provided, state) => ({
+      ...provided,
+      color: "transparent",
+      zIndex: "9999"
+    })/* ,
+    menuList: (provided) => ({
+      ...provided,
+      "::-webkit-scrollbar-track": {
+        background: "white"
+      },
+    }) */
   }
 
   return (
     <>
-      <div>
-        <input
-          type="search"
-          value={searchGames}
-          placeholder="Search a game..."
-          onChange={handleSearch}
-        />
-      </div>
-      <div className="DropdownDiv"> // Fazer flex disto em row?
-        <div>
-          <label>
-            Genres
-            <Dropdown
-              placeholder='Select Genre'
-              fluid={false}
-              selection
-              onChange={filterGenreHandler}
-              options={genresList}
-            />
-          </label>
+      <div className="GamesListPage">
+        <div className="GamesListDiv">
+          {displayList === null ? (
+            <h1>Game list loading...</h1>
+          ) : (
+            displayList.map((game) => {
+              return (
+                <div className="GamesListImageDiv" key={game.id}>
+                  <Link to={`/games/${game.id}`}>
+                    <img src={game.image_url} />
+                  </Link>
+                </div>
+              );
+            })
+          )}
         </div>
-        <div>
-          <label>
-            Platforms
-            <Dropdown
-              placeholder='Select Platform'
-              fluid={false}
-              selection
-              onChange={filterPlatformHandler}
-              options={platformsList}
-            />
-          </label>
-        </div>
-        <div>
-          <label>
-            Price
-            <Dropdown
-              placeholder='Select Platform'
-              fluid={false}
-              selection
-              onChange={filterPriceHandler}
-              options={priceOptions}
-            />
-          </label>
+        <div className="UserInputs">
+          <div className="SearchBarDiv">
+            <div className="cntr">
+              <div className="cntr-innr">
+                <label htmlFor="inpt_search" className="search">
+                  <input
+                    className="inpt_search"
+                    type="text"
+                    value={searchGames}
+                    onChange={handleSearch}
+                  />
+                </label>
+              </div>
+            </div>
+          </div>
+          <div className="DropdownDiv">
+            <div className="DropdownSelect">
+              <Select
+                placeholder={"Select genre"}
+                styles={customStyles}
+                onChange={filterGenreHandler}
+                options={genresList}
+              />
+            </div>
+            <div className="DropdownSelect">
+              <Select
+                placeholder={"Select platform"}
+                styles={customStyles}
+                onChange={filterPlatformHandler}
+                options={platformsList}
+              />
+            </div>
+            <div className="DropdownSelect">
+              <Select
+                placeholder={"Select price"}
+                styles={customStyles}
+                onChange={filterPriceHandler}
+                options={priceOptions}
+              />
+            </div>
+          </div>
+
         </div>
       </div>
 
-      <div className="GamesListDiv">
-        {displayList === null ? (
-          <h1>Game list loading...</h1>
-        ) : (
-          displayList.map((game) => {
-            return (
-              <div className="GamesListImageDiv" key={game.id}>
-                <Link to={`/games/${game.id}`}>
-                  <img src={game.image_url} />
-                </Link>
-              </div>
-            );
-          })
-        )}
-      </div>
+
     </>
   );
 }
