@@ -108,6 +108,10 @@ body {
     GAMES LIST PAGE CSS
 */
 
+.GamesListPage{
+display: flex;
+}
+
 .GamesListDiv {
   display: flex;
   flex-wrap: wrap;
@@ -141,6 +145,98 @@ body {
   height: 230px;
   transition: 0.2s;
 }
+
+.UserInputs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 50px;
+}
+
+.SearchBarDiv, .DropdownDiv{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+
+.DropdownDiv {
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.SearchBarDiv {
+  justify-content: flex-end;
+}
+
+
+/* TESTING TESTING TESTING */
+
+/*** STYLES ***/
+
+.cntr-innr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 6px;
+
+}
+.search {
+	display: inline-block;
+	position: relative;
+	height: 35px;
+	width: 35px;
+	box-sizing: border-box;
+	margin: 0px 8px 7px 0px;
+	padding: 7px 9px 0px 9px;
+	border: 3px solid white;
+	border-radius: 25px;
+	transition: all 200ms ease;
+	cursor: text;
+	
+	&:after {
+		content: "";
+		position: absolute;
+		width: 3px;
+		height: 20px;
+		right: -5px;
+		top: 21px;
+		background:  white;
+		border-radius: 3px;
+		transform: rotate(-45deg);
+		transition: all 200ms ease;
+	}
+	
+	&.active,
+	&:hover {
+		width: 300px;
+		margin-right: 0px;
+		
+		&:after {
+			height: 0px;	
+		}
+	}
+	
+	.inpt_search {
+		width: 100%;
+		border: none;
+		box-sizing: border-box;
+		font-family: Helvetica;
+		font-size: 15px;
+		color: white;
+		background: transparent;
+		outline-width: 0px;
+	}
+}
+
+
+
+
+
+
+
+
+/* TESTING TESTING TESTING */
+
 
 /* EDIT GAME PAGE CSS*/
 
