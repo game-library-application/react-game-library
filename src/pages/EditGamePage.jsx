@@ -10,6 +10,7 @@ function EditGamePage() {
   const [price, setPrice] = useState("");
   const [platform, setPlatform] = useState("");
   const [image, setImage] = useState("");
+  const [images, setImages] = useState([]);
 
   const { gameId } = useParams();
 
@@ -28,10 +29,10 @@ function EditGamePage() {
         setPrice(response.data.price);
         setPlatform(response.data.platform.toString());
         setImage(response.data.image_url);
+        setImages(response.data.images);
       })
       .catch((error) => {
-        console.log("Something went wrong getting the details");
-        console.log(error);
+        console.log("Error: ", error);
       });
   }, []);
 
@@ -47,6 +48,7 @@ function EditGamePage() {
       platform: SplitString(platform),
       free: price <= 0 ? true : false,
       image_url: image,
+      images: images,
     };
 
     axios
@@ -55,8 +57,7 @@ function EditGamePage() {
         navigate(`/games/${gameId}`);
       })
       .catch((error) => {
-        console.log("Something went wrong updating the game");
-        console.log(error);
+        console.log("Error: ", error);
       });
   };
 
@@ -137,6 +138,15 @@ function EditGamePage() {
               name="image"
               value={image}
               onChange={(e) => setImage(e.target.value)}
+            />
+          </label>
+          <label>
+            <p>Game Images</p>
+            <input
+              type="text"
+              name="imageS"
+              value={images}
+              onChange={(e) => setImages(e.target.value)}
             />
           </label>
           <button className="FormButton">Update</button>

@@ -205,10 +205,6 @@ body {
   width: 460px;
 }
 
-.ImageDescription img {
-  max-height: 300px;
-}
-
 .GameImages {
   display: flex;
   flex-wrap: nowrap;
