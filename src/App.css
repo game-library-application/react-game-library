@@ -199,6 +199,9 @@ body {
   display: flex;
   flex-wrap: wrap;
   width: 460px;
+}
+
+.ImageDescription img {
   max-height: 300px;
 }
 
