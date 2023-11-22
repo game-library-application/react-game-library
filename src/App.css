@@ -154,13 +154,14 @@ display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  margin: 50px;
+  margin-top: 50px;
+  margin-left: auto;
 }
 
 .SearchBarDiv, .DropdownDiv{
   display: flex;
   flex-wrap: wrap;
-  margin: 20px;
+  margin: 23px;
 }
 
 .DropdownDiv {
@@ -170,6 +171,7 @@ display: flex;
 
 .SearchBarDiv {
   justify-content: flex-end;
+  
 }
 
 /* TESTING TESTING TESTING */
