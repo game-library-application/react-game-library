@@ -42,8 +42,12 @@ function GameInfo(props) {
             </div>
           </div>
         </div>
-        <div className="GameImages">
-
+        <div className="GameImages ImageDescription">
+        {props.game.images.length <= 0
+                ? <p>No images</p>
+                : (props.game.images.map((image, index) => (
+                  <img src={image} key={index}/>
+                )))}
         </div>
       </div>
     </div>
