@@ -278,6 +278,8 @@ body {
 }
 .InfoValue.noMarginLeft {
   margin-left: 0px !important;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .DeleteButton {
@@ -287,6 +289,10 @@ body {
 
 .GameInfoButtons Button:hover {
   cursor: pointer;
+}
+
+.PlatformButton {
+  margin-bottom: 6px;
 }
 
 /* ADD GAMES PAGE CSS */
