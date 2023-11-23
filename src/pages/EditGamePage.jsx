@@ -21,6 +21,8 @@ function EditGamePage(props) {
   const navigate = useNavigate();
 
   const API_URL = "https://api-json-server.adaptable.app";
+  
+  const defaultImageUrl = "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
 
   useEffect(() => {
     axios
@@ -68,7 +70,7 @@ function EditGamePage(props) {
       price: price,
       platform: platform,
       free: price <= 0 ? true : false,
-      image_url: image,
+      image_url: setDefaultImageUrl(image),
       images: images,
       video_url: videoUrl
     };
@@ -85,6 +87,12 @@ function EditGamePage(props) {
       });
 
   };
+
+  function setDefaultImageUrl(imageUrl) {
+    if (imageUrl.length === 0) return defaultImageUrl
+
+    return imageUrl
+  }
 
   function getGenres(data) {
     const allGenres = data.map((elm) => elm.genre);

@@ -21,6 +21,8 @@ function AddGamePage() {
 
   const navigate = useNavigate();
 
+  const defaultImageUrl = "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
+
   useEffect(() => {
     axios
       .get(API_URL + "/games")
@@ -84,7 +86,7 @@ function AddGamePage() {
       price: parseFloat(price),
       genre: genre,
       platform: platform,
-      image_url: imageUrl,
+      image_url: setDefaultImageUrl(imageUrl),
       images: images,
       video_url: videoUrl,
       free: price <= 0 ? true : false,
@@ -108,6 +110,12 @@ function AddGamePage() {
   const handleGenreSelection = (event, data) => {
     setGenre(data.value);
   };
+
+  function setDefaultImageUrl(imageUrl) {
+    if (imageUrl.length === 0) return defaultImageUrl
+
+    return imageUrl
+  }
 
   return (
     <div>
@@ -146,7 +154,7 @@ function AddGamePage() {
                   type="number"
                   name="rating"
                   required={true}
-                  min={0}
+                  min={1}
                   max={10}
                   step=".01"
                   value={rating}
@@ -201,10 +209,20 @@ function AddGamePage() {
               <input
                 type="text"
                 name="image_url"
-                required={true}
                 value={imageUrl}
                 onChange={(e) => {
                   setImageUrl(e.target.value);
+                }}
+              />
+            </label>
+            <label className="VideoLabel">
+              <p>Youtube Video URL</p>
+              <input
+                type="text"
+                name="video_url"
+                value={videoUrl}
+                onChange={(e) => {
+                  setVideoUrl(e.target.value);
                 }}
               />
             </label>
@@ -221,9 +239,9 @@ function AddGamePage() {
                 <div className="ImageAdd">
                   {imageUrl === "" ? (
                     ""
-                    ) : (
-                    <img src={imageUrl} 
-                    style={{width:"460px", height:"216px", objectFit:"cover", borderRadius:"30px"}}/>
+                  ) : (
+                    <img src={imageUrl}
+                      style={{ width: "460px", height: "216px", objectFit: "cover", borderRadius: "30px" }} />
                   )}
                 </div>
                 <p>
@@ -241,7 +259,7 @@ function AddGamePage() {
                   <p>{price === "" ? "? €" : price} €</p>
                 </div>
                 <div className="PlatformGenreAdd">
-                <h3 className="GenresH3">GENRES</h3>
+                  <h3 className="GenresH3">GENRES</h3>
                   <div className="ButtonsAdd">
                     {genre === "" ? (
                       <p>No genres</p>
@@ -261,7 +279,7 @@ function AddGamePage() {
                       ))
                     )}
                   </div>
-                </div>     
+                </div>
               </div>
             </div>
           </div>
