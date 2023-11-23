@@ -19,7 +19,7 @@ Bonus:
 - Recommended page (based on highest rated);
 - Filter search for recommended page;
 - Favorites page (+ "Add to Favorites" button in Game details page);
-- Change "Edit game" to show form under the game in game details page;
+- Change "Add game" to show game details preview;
 - Embed trailer in game details page.
 
 
@@ -84,7 +84,7 @@ Bonus:
 
 [ ] Favorites page (+ "Add to Favorites" button in Game details page);
 
-[ ] Change "Edit game" to show form under the game in game details page;
+[X] Change "Add game" to show game details preview;;
 
 [ ] Embed trailer in game details page.
 
