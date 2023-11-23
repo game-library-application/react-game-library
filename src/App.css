@@ -220,6 +220,13 @@ display: flex;
 .TitleRecommended h1 {
   font-size: 3rem;
 }
+
+.PaginationGames {
+  position: absolute;
+  top: 93%;
+  left: 43%;
+}
+
 /* TESTING TESTING TESTING */
 
 /*** STYLES ***/
