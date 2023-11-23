@@ -216,7 +216,7 @@ function AddGamePage() {
               />
             </label>
             <label className="VideoLabel">
-              <p>Youtube Video URL</p>
+              <p>Youtube Video</p>
               <input
                 type="text"
                 name="video_url"

@@ -232,6 +232,15 @@ function EditGamePage(props) {
                   onChange={(e) => setImages(SplitString(e.target.value))}
                 />
               </label>
+              <label>
+                <p>Youtube Video</p>
+                <input
+                  type="text"
+                  name="video_url"
+                  value={videoUrl}
+                  onChange={(e) => setVideoUrl(e.target.value)}
+                />
+              </label>
               <button className="UpdateButton">Update</button>
             </form>
           </div>
