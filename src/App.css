@@ -227,7 +227,25 @@ display: flex;
   left: 43%;
 }
 
+.ui.pagination.menu {
+  background-color: rgba(0, 0, 0, 0);
+}
 
+.ui.pagination.menu a.active.item {
+  border-top: 1px solid white;
+  background-color: #5E449F;
+  color: white;
+}
+
+.ui.pagination.menu .item {
+  color: white;
+  border: 1px solid white;
+}
+
+.ui.pagination.menu .item:hover {
+  color: #5E449F;
+  text-shadow:  0 0 30px #351a79, 0 0 40px #351a79, 0 0 60px #351a79;
+}
 
 /*** SEARCH BAR STYLES ***/
 
