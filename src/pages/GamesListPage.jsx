@@ -157,12 +157,14 @@ function GamesListPage() {
       border: "1px solid white",
       color: "white",
       position: "relative",
+      cursor: "pointer"
     }),
     control: (provided) => ({
       ...provided,
       backgroundColor: "neutral0",
       color: "white",
       width: "200px",
+      cursor: "pointer"
     }),
     option: (provided, state) => ({
       ...provided,
@@ -171,6 +173,7 @@ function GamesListPage() {
       "&:hover": {
         backgroundColor: "transparent",
         border: "1px solid white",
+        cursor: "pointer"
       },
     }),
     placeholder: (provided) => ({
@@ -185,6 +188,7 @@ function GamesListPage() {
       ...provided,
       color: "transparent",
       zIndex: "9999",
+      
     }) /* ,
     menuList: (provided) => ({
       ...provided,

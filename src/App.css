@@ -72,6 +72,10 @@ body {
   border-radius: 25px;
 }
 
+.menuIcon:hover {
+  cursor: pointer;
+}
+
 .Container {
   background-color: rgba(0, 0, 0, 0.8);
   width: 50px;
@@ -374,6 +378,7 @@ body {
   border-radius: 10px;
   border: none;
   margin-left: 15px;
+  cursor: pointer;
 }
 
 .ImageDescription {
@@ -426,6 +431,7 @@ body {
   border-radius: 5px;
   padding: 7px 15px;
   margin-right: 10px;
+  cursor: pointer;
 }
 
 .GenrePlatformButtons {
@@ -448,6 +454,11 @@ body {
 .EditButton {
   background-color: #00bf63;
   padding: 5px 32px;
+}
+
+.UpdateButton:hover,
+.EditButton:hover {
+  cursor: pointer;
 }
 .InfoValue {
   font-size: 1.2em;
@@ -561,6 +572,10 @@ textarea {
   font-weight: 300;
 }
 
+.AddGameButton:hover {
+  cursor: pointer;
+}
+
 .GameAddContainer {
   background-color: rgba(0, 0, 0, 0.7);
   padding: 20px;
@@ -611,6 +626,10 @@ textarea {
   padding: 10px 20px;
   margin-left: 10px;
   color: white;
+}
+
+.PlatformGenreAdd Button:hover {
+  cursor: pointer;
 }
 
 .ButtonsAdd {

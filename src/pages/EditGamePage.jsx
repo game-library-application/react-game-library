@@ -241,7 +241,7 @@ function EditGamePage(props) {
                   onChange={(e) => setVideoUrl(e.target.value)}
                 />
               </label>
-              <button className="UpdateButton">Update</button>
+              <button className="AddGameButton">Update</button>
             </form>
           </div>
         </div>
