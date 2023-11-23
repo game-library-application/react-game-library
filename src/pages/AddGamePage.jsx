@@ -157,7 +157,7 @@ function AddGamePage() {
                   required={true}
                   min={1}
                   max={10}
-                  step=".01"
+                  step=".1"
                   value={rating}
                   onChange={(e) => {
                     setRating(e.target.value);
