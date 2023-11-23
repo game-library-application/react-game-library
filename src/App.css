@@ -227,6 +227,26 @@ display: flex;
   left: 43%;
 }
 
+.ui.pagination.menu {
+  background-color: rgba(0, 0, 0, 0);
+  border: 0.5px solid white;
+}
+
+.ui.pagination.menu a.active.item {
+  background-color: #351a79;
+  color: white;
+}
+
+.ui.pagination.menu .item {
+  color: white;
+  border: 0.5px solid white;
+}
+
+.ui.pagination.menu .item:hover {
+  color: #351a79;
+  text-shadow:  0 0 30px #351a79, 0 0 40px #351a79, 0 0 60px #351a79;
+}
+
 /* TESTING TESTING TESTING */
 
 /*** STYLES ***/
