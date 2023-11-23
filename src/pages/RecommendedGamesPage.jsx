@@ -40,31 +40,26 @@ function RecommendedGamesPage() {
 
   return (
     <>
-      <div className="TitleRecommended">
-        <h1 >
-          TOP 10 GAMES
-        </h1>
-      </div>
       <div className="GamesListDiv">
         {gamesList === null ? (
           <h1>Game list loading...</h1>
         ) : (
           (sortGamesbByRating(),
-          recommendedGames.map((game) => {
-            return (
-              <div className="GamesListImageDiv" key={game.id}>
-                <Link to={`/games/${game.id}`}>
-                  <div className="GamesListImageDiv" key={game.id}>
-                    <img src={game.image_url} />
-                    <div className="BgDiv"></div>
-                    <span className="TitleSpan">
-                      <p className="title">{game.title.toUpperCase()}</p>
-                    </span>
-                  </div>
-                </Link>
-              </div>
-            );
-          }))
+            recommendedGames.map((game) => {
+              return (
+                <div className="GamesListImageDiv" key={game.id}>
+                  <Link to={`/games/${game.id}`}>
+                    <div className="GamesListImageDiv" key={game.id}>
+                      <img src={game.image_url} />
+                      <div className="BgDiv"></div>
+                      <span className="TitleSpan">
+                        <p className="title">{game.title.toUpperCase()}</p>
+                      </span>
+                    </div>
+                  </Link>
+                </div>
+              );
+            }))
         )}
       </div>
     </>

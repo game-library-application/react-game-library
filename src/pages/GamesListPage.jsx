@@ -14,7 +14,7 @@ function GamesListPage() {
   const [searchGames, setSearchGames] = useState("");
   const [activePage, setActivePage] = useState(1);
 
-  const gamesPerPage = 6;
+  const gamesPerPage = 10;
 
   const allOptions = {
     label: "All",
@@ -66,8 +66,8 @@ function GamesListPage() {
       searchGames === ""
         ? gamesList
         : gamesList.filter((game) => {
-            return game.title.toLowerCase().includes(searchGames.toLowerCase());
-          });
+          return game.title.toLowerCase().includes(searchGames.toLowerCase());
+        });
 
     setDisplayList(games);
   }, [searchGames]);
@@ -159,10 +159,10 @@ function GamesListPage() {
       position: "relative",
       cursor: "pointer"
     }),
-    control: (provided) => ({
+    control: (provided, state) => ({
       ...provided,
       backgroundColor: "neutral0",
-      color: "white",
+      border: state.isHovered || state.isSelected ? "1px solid white" : "1px solid white",
       width: "200px",
       cursor: "pointer"
     }),
@@ -172,6 +172,9 @@ function GamesListPage() {
         state.isFocused || state.isHovered ? "transparent" : "transparent",
       "&:hover": {
         backgroundColor: "transparent",
+        colors: {
+          primary: "white"
+        },
         border: "1px solid white",
         cursor: "pointer"
       },
@@ -184,11 +187,11 @@ function GamesListPage() {
       ...provided,
       color: "white",
     }),
-    menuPortal: (provided, state) => ({
+    menuPortal: (provided) => ({
       ...provided,
       color: "transparent",
       zIndex: "9999",
-      
+
     }) /* ,
     menuList: (provided) => ({
       ...provided,
@@ -205,9 +208,9 @@ function GamesListPage() {
     displayList === null
       ? null
       : displayList.slice(
-          (activePage - 1) * gamesPerPage,
-          activePage * gamesPerPage
-        );
+        (activePage - 1) * gamesPerPage,
+        activePage * gamesPerPage
+      );
 
   return (
     <>

@@ -76,7 +76,14 @@ function GameInfo(props) {
                 <img src={image} key={index} />
               )))}
           </div>
-        </div>
+          {/* <div className="ScrollingWrapper">
+            {props.game.images.length <= 0
+              ? <p></p>
+              : (props.game.images.map((image, index) => (
+                <img className="card" src={image} key={index} />
+              )))}
+          </div>*/}
+        </div> 
 
       </div>
     </div>

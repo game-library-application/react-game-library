@@ -41,9 +41,13 @@ body {
   color: #351a79;
 }
 
+.NavLink.active {
+  color: #5e449f;
+}
+
 .hrSidebar {
   border-width: 0;
-  height: 1.5px;
+  height: 1.5px; 
   width: 85%;
   background-color: rgba(53, 26, 121, 0.5);
 }
@@ -151,7 +155,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 50px;
+  margin-top: 110px;
 }
 
 .GamesListImageDiv {
@@ -218,7 +222,7 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 110px;
   margin-left: auto;
 }
 
@@ -251,8 +255,7 @@ body {
   display: flex;
   justify-content: center;
   margin-bottom: 50px;
-  /* top: 93%;
-  left: 43%; */
+  margin-right: 245px;
 }
 
 .ui.pagination.menu {
@@ -393,6 +396,7 @@ body {
 
 .GameMedia {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .GameVideo,
@@ -406,6 +410,7 @@ body {
 .GameVideo {
   margin-left: 50px;
 }
+
 .GameImages img {
   margin: 0 10px;
 }
@@ -429,7 +434,7 @@ body {
 }
 
 .GenrePlatformButtons Button {
-  background-color: #351a79;
+  background-color: #5e449f;
   color: white;
   border: none;
   border-radius: 5px;
@@ -450,7 +455,7 @@ body {
 }
 
 .hr {
-  border-right: 1px solid #351a79;
+  border-right: 1px solid #5e449f;
   padding: 0 5px;
 }
 
