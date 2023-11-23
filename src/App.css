@@ -393,13 +393,14 @@ body {
 
 .GameMedia {
   display: flex;
+  align-items: center;
 }
 
 .GameVideo,
 .GameImages {
   display: flex;
   flex-wrap: nowrap;
-  width: 460px;
+  width: 470px;
   max-height: 300px;
 }
 
@@ -489,6 +490,68 @@ body {
 
 .PlatformButton {
   margin-bottom: 6px;
+}
+
+.Carousel {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Slide {
+  border-radius: 0.5rem;
+  width: 100%;
+  height: 100%;
+}
+
+.GameInfoDetails img.SlideHidden {
+  display: none;
+}
+
+.Arrow {
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  color: white;
+  filter: drop-shadow(0px 0px 5px #555);
+}
+
+.Arrow:hover {
+  cursor: pointer;
+}
+
+.ArrowLeft {
+  left: 1rem;
+}
+
+.ArrowRight {
+  right: 1rem;
+}
+
+.Indicators {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 1rem;
+  margin-left: 50%;
+  width: 1.5rem;
+}
+
+.Indicator {
+  background-color: white;
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 100%;
+  border: none;
+  outline: none;
+  box-shadow: 0px 0px 5px #555;
+  cursor: pointer;
+  padding: 0px;
+}
+
+.IndicatorInactive {
+  background-color: grey
 }
 
 /* EDIT GAME PAGE CSS */
