@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Dropdown } from "semantic-ui-react";
+import GameDetailsContainer from "../components/GameDetailsContainer";
 import axios from "axios";
 
 function EditGamePage(props) {
@@ -244,60 +245,8 @@ function EditGamePage(props) {
             </form>
           </div>
         </div>
-        <div className="PageContainer">
-          <h1 className="TitleAdd">
-            {title.toUpperCase() === "" ? "TITLE" : title.toUpperCase()}
-          </h1>
-          <div className="GameAddContainer">
-            <div className="InfoDiv">
-              <div className="ImageDescriptionDiv">
-                <div className="ImageAdd">
-                  {image === "" ? (
-                    ""
-                  ) : (
-                    <img src={image}
-                      style={{ width: "460px", height: "216px", objectFit: "cover", borderRadius: "30px" }} />
-                  )}
-                </div>
-                <p>
-                  {description === ""
-                    ? "Brief description about the game..."
-                    : description}
-                </p>
-              </div>
-              <div className="hr"></div>
-              <div className="StatisticsAdd">
-                <div className="RatingPriceAdd">
-                  <h3>RATING</h3>
-                  <p>{rating === "" ? "?/10" : rating}/10</p>
-                  <h3 className="PriceH3">PRICE</h3>
-                  <p>{price === "" ? "? €" : price} €</p>
-                </div>
-                <div className="PlatformGenreAdd">
-                  <h3 className="GenresH3">GENRES</h3>
-                  <div className="ButtonsAdd">
-                    {genre === "" ? (
-                      <p>No genres</p>
-                    ) : (
-                      genre.map((genre, index) => (
-                        <button key={index}>{genre}</button>
-                      ))
-                    )}
-                  </div>
-                  <h3 className="PlatformsH3">PLATFORMS</h3>
-                  <div className="ButtonsAdd">
-                    {platform === "" ? (
-                      <p>No platforms</p>
-                    ) : (
-                      platform.map((platform, index) => (
-                        <button key={index}>{platform}</button>
-                      ))
-                    )}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div>
+          <GameDetailsContainer title={title} imageUrl={image} description={description} rating={rating} price={price} genre={genre} platform={platform}/>
         </div>
       </div>
     </>
