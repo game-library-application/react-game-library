@@ -4,14 +4,22 @@ import GamesListPage from "../pages/GamesListPage";
 import AddGamePage from "../pages/AddGamePage";
 import RecommendedGamesPage from "../pages/RecommendedGamesPage";
 import RandomGamePage from "../pages/RandomGamePage";
+import { useState } from "react";
 
 function Navbar() {
+  const [expand, setExpand] = useState(true);
+
+  const handleExpandClick = () => {
+  console.log("cliked");
+    setExpand(!expand);
+  }
+
   return (
-    <div className="Container">
+    <div className={`Container ${expand === true ? "expand" : "shrink"}`}>
       <nav className="Sidebar">
         <div className="Gamehub">
           <span>GAMEHUB</span>
-          <div className="menuIcon">
+          <div className="menuIcon" onClick={handleExpandClick}>
             <div className="menuBar"></div>
             <div className="menuBar"></div>
             <div className="menuBar"></div>

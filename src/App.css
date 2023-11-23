@@ -74,6 +74,24 @@ body {
 
 .Container {
   background-color: rgba(0, 0, 0, 0.8);
+  width: 50px;
+}
+
+.Container.expand {
+  width: unset;
+}
+
+.Container.shrink .Sidebar .Gamehub span,
+.Container.shrink .Sidebar .NavLink span {
+  display: none;
+}
+
+.Container.shrink .Sidebar .Gamehub div {
+  margin-right: 10px;
+}
+
+.Container.shrink .Sidebar .NavLink div {
+  margin-left: -4px;
 }
 
 /* HOMEPAGE CSS */
@@ -111,11 +129,11 @@ body {
     GAMES LIST PAGE CSS
 */
 
-.GamesListPage{
-display: flex;
+.GamesListPage {
+  display: flex;
 }
 
-.GamehubPage{
+.GamehubPage {
   font-family: "League Spartan", sans-serif;
   color: rgba(53, 26, 121, 0.6);
   font-size: 4rem;
@@ -157,7 +175,8 @@ display: flex;
   transition: 0.2s;
 }
 
-.TitleSpan, .BgDiv {
+.TitleSpan,
+.BgDiv {
   position: absolute;
   z-index: 1;
 }
@@ -174,7 +193,7 @@ display: flex;
   opacity: 0.7;
 }
 
-.BgDiv:hover + .TitleSpan{
+.BgDiv:hover + .TitleSpan {
   display: block;
 }
 
@@ -197,7 +216,8 @@ display: flex;
   margin-left: auto;
 }
 
-.SearchBarDiv, .DropdownDiv{
+.SearchBarDiv,
+.DropdownDiv {
   display: flex;
   flex-wrap: wrap;
   margin: 23px;
@@ -233,7 +253,7 @@ display: flex;
 
 .ui.pagination.menu a.active.item {
   border-top: 1px solid white;
-  background-color: #5E449F;
+  background-color: #5e449f;
   color: white;
 }
 
@@ -243,8 +263,8 @@ display: flex;
 }
 
 .ui.pagination.menu .item:hover {
-  color: #5E449F;
-  text-shadow:  0 0 30px #351a79, 0 0 40px #351a79, 0 0 60px #351a79;
+  color: #5e449f;
+  text-shadow: 0 0 30px #351a79, 0 0 40px #351a79, 0 0 60px #351a79;
 }
 
 /*** SEARCH BAR STYLES ***/
@@ -254,54 +274,53 @@ display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 6px;
-
 }
 .search {
-	display: inline-block;
-	position: relative;
-	height: 35px;
-	width: 35px;
-	box-sizing: border-box;
-	margin: 0px 8px 7px 0px;
-	padding: 7px 9px 0px 9px;
-	border: 3px solid white;
-	border-radius: 25px;
-	transition: all 200ms ease;
-	cursor: text;
-	
-	&:after {
-		content: "";
-		position: absolute;
-		width: 3px;
-		height: 20px;
-		right: -5px;
-		top: 21px;
-		background:  white;
-		border-radius: 3px;
-		transform: rotate(-45deg);
-		transition: all 200ms ease;
-	}
-	
-	&.active,
-	&:hover {
-		width: 200px;
-		margin-right: 0px;
-		
-		&:after {
-			height: 0px;	
-		}
-	}
-	
-	.inpt_search {
-		width: 100%;
-		border: none;
-		box-sizing: border-box;
-		font-family: Helvetica;
-		font-size: 15px;
-		color: white;
-		background: transparent;
-		outline-width: 0px;
-	}
+  display: inline-block;
+  position: relative;
+  height: 35px;
+  width: 35px;
+  box-sizing: border-box;
+  margin: 0px 8px 7px 0px;
+  padding: 7px 9px 0px 9px;
+  border: 3px solid white;
+  border-radius: 25px;
+  transition: all 200ms ease;
+  cursor: text;
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 20px;
+    right: -5px;
+    top: 21px;
+    background: white;
+    border-radius: 3px;
+    transform: rotate(-45deg);
+    transition: all 200ms ease;
+  }
+
+  &.active,
+  &:hover {
+    width: 200px;
+    margin-right: 0px;
+
+    &:after {
+      height: 0px;
+    }
+  }
+
+  .inpt_search {
+    width: 100%;
+    border: none;
+    box-sizing: border-box;
+    font-family: Helvetica;
+    font-size: 15px;
+    color: white;
+    background: transparent;
+    outline-width: 0px;
+  }
 }
 
 /* GAME INFO PAGE CSS*/
@@ -323,7 +342,6 @@ display: flex;
   font-family: "League Spartan", sans-serif;
   text-transform: uppercase;
   font-size: 60px;
-
 }
 
 .GameInfoDetails h3 {
@@ -458,10 +476,6 @@ display: flex;
 }
 
 /* EDIT GAME PAGE CSS */
-
-
-
-
 
 /* ADD GAMES PAGE CSS */
 
@@ -625,7 +639,6 @@ textarea {
 .PlatformsH3 {
   margin-top: 15px;
 }
-
 
 /* FOOTER */
 
