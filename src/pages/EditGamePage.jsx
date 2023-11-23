@@ -21,7 +21,7 @@ function EditGamePage(props) {
   const navigate = useNavigate();
 
   const API_URL = "https://api-json-server.adaptable.app";
-  
+
   const defaultImageUrl = "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
 
   useEffect(() => {
@@ -53,9 +53,9 @@ function EditGamePage(props) {
         console.log("Error: ", error);
       });
 
-      
-      console.log(genre)
-      console.log(allGenres)
+
+    console.log(genre)
+    console.log(allGenres)
 
   }, []);
 
@@ -177,6 +177,16 @@ function EditGamePage(props) {
                   onChange={(e) => setRating(e.target.value)}
                 />
               </label>
+              <label className="PriceLabel">
+                <p>Price</p>
+                <input
+                  type="number"
+                  name="price"
+                  step=".01"
+                  value={price}
+                  onChange={(e) => setPrice(e.target.value)}
+                />
+              </label>
               <label className="GenreLabel">
                 <p>Genres</p>
                 <Dropdown
@@ -203,18 +213,7 @@ function EditGamePage(props) {
                   options={allPlatforms}
                 />
               </label>
-
-              <label>
-                <p>Price</p>
-                <input
-                  type="number"
-                  name="price"
-                  step=".01"
-                  value={price}
-                  onChange={(e) => setPrice(e.target.value)}
-                />
-              </label>
-              <label>
+              <label className="ImageLabel">
                 <p>Image</p>
                 <input
                   type="text"
@@ -232,7 +231,7 @@ function EditGamePage(props) {
                   onChange={(e) => setImages(SplitString(e.target.value))}
                 />
               </label>
-              <label>
+              <label className="VideoLabel">
                 <p>Youtube Video</p>
                 <input
                   type="text"
@@ -243,6 +242,61 @@ function EditGamePage(props) {
               </label>
               <button className="AddGameButton">Update</button>
             </form>
+          </div>
+        </div>
+        <div className="PageContainer">
+          <h1 className="TitleAdd">
+            {title.toUpperCase() === "" ? "TITLE" : title.toUpperCase()}
+          </h1>
+          <div className="GameAddContainer">
+            <div className="InfoDiv">
+              <div className="ImageDescriptionDiv">
+                <div className="ImageAdd">
+                  {image === "" ? (
+                    ""
+                  ) : (
+                    <img src={image}
+                      style={{ width: "460px", height: "216px", objectFit: "cover", borderRadius: "30px" }} />
+                  )}
+                </div>
+                <p>
+                  {description === ""
+                    ? "Brief description about the game..."
+                    : description}
+                </p>
+              </div>
+              <div className="hr"></div>
+              <div className="StatisticsAdd">
+                <div className="RatingPriceAdd">
+                  <h3>RATING</h3>
+                  <p>{rating === "" ? "?/10" : rating}/10</p>
+                  <h3 className="PriceH3">PRICE</h3>
+                  <p>{price === "" ? "? €" : price} €</p>
+                </div>
+                <div className="PlatformGenreAdd">
+                  <h3 className="GenresH3">GENRES</h3>
+                  <div className="ButtonsAdd">
+                    {genre === "" ? (
+                      <p>No genres</p>
+                    ) : (
+                      genre.map((genre, index) => (
+                        <button key={index}>{genre}</button>
+                      ))
+                    )}
+                  </div>
+                  <h3 className="PlatformsH3">PLATFORMS</h3>
+                  <div className="ButtonsAdd">
+                    {platform === "" ? (
+                      <p>No platforms</p>
+                    ) : (
+                      platform.map((platform, index) => (
+                        <button key={index}>{platform}</button>
+                      ))
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
