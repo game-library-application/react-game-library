@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Select from "react-select";
 import axios from "axios";
+import { Pagination } from "semantic-ui-react";
 
 const API_URL = "https://api-json-server.adaptable.app";
 
@@ -11,6 +12,9 @@ function GamesListPage() {
   const [genresList, setGenresList] = useState(null);
   const [platformsList, setPlatformsList] = useState(null);
   const [searchGames, setSearchGames] = useState("");
+  const [activePage, setActivePage] = useState(1);
+
+  const gamesPerPage = 6;
 
   const allOptions = {
     label: "All",
@@ -190,17 +194,26 @@ function GamesListPage() {
     }) */,
   };
 
+  const handlePaginationChange = (e, { activePage }) =>
+    setActivePage(activePage);
+
+  const gamesOnPage =
+    displayList === null
+      ? null
+      : displayList.slice(
+          (activePage - 1) * gamesPerPage,
+          activePage * gamesPerPage
+        );
+
   return (
     <>
-    <div>
-      {/* <h1 className="GamehubPage">GAMEHUB</h1> */}
-    </div>
+      <div>{/* <h1 className="GamehubPage">GAMEHUB</h1> */}</div>
       <div className="GamesListPage">
         <div className="GamesListDiv">
-          {displayList === null ? (
+          {gamesOnPage === null ? (
             <h1>Game list loading...</h1>
           ) : (
-            displayList.map((game) => {
+            gamesOnPage.map((game) => {
               return (
                 <Link to={`/games/${game.id}`}>
                   <div className="GamesListImageDiv" key={game.id}>
@@ -257,6 +270,17 @@ function GamesListPage() {
             </div>
           </div>
         </div>
+      </div>
+      <div className="PaginationGames">
+        {gamesOnPage === null ? (
+          ""
+        ) : (
+          <Pagination
+            defaultActivePage={1}
+            totalPages={Math.ceil(displayList.length / gamesPerPage)}
+            onPageChange={handlePaginationChange}
+          />
+        )}
       </div>
     </>
   );
