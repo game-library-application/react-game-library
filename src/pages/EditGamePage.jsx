@@ -14,6 +14,7 @@ function EditGamePage(props) {
   const [platform, setPlatform] = useState("");
   const [image, setImage] = useState("");
   const [images, setImages] = useState([]);
+  const [videoUrl, setVideoUrl] = useState("")
 
   const { gameId } = useParams();
 
@@ -33,6 +34,7 @@ function EditGamePage(props) {
         setPlatform(response.data.platform);
         setImage(response.data.image_url);
         setImages(response.data.images);
+        setVideoUrl(response.data.video_url);
         console.log(response.data.platform)
       })
       .catch((error) => {
@@ -68,6 +70,7 @@ function EditGamePage(props) {
       free: price <= 0 ? true : false,
       image_url: image,
       images: images,
+      video_url: videoUrl
     };
 
     console.log(images);

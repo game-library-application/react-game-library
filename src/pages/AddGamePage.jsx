@@ -14,6 +14,7 @@ function AddGamePage() {
   const [platform, setPlatform] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const [images, setImages] = useState([]);
+  const [videoUrl, setVideoUrl] = useState("")
 
   const [genresList, setGenresList] = useState(null);
   const [platformsList, setPlatformsList] = useState(null);
@@ -85,6 +86,7 @@ function AddGamePage() {
       platform: platform,
       image_url: imageUrl,
       images: images,
+      video_url: videoUrl,
       free: price <= 0 ? true : false,
     };
 
