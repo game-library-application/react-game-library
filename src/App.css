@@ -229,27 +229,25 @@ display: flex;
 
 .ui.pagination.menu {
   background-color: rgba(0, 0, 0, 0);
-  border: 0.5px solid white;
 }
 
 .ui.pagination.menu a.active.item {
-  background-color: #351a79;
+  border-top: 1px solid white;
+  background-color: #5E449F;
   color: white;
 }
 
 .ui.pagination.menu .item {
   color: white;
-  border: 0.5px solid white;
+  border: 1px solid white;
 }
 
 .ui.pagination.menu .item:hover {
-  color: #351a79;
+  color: #5E449F;
   text-shadow:  0 0 30px #351a79, 0 0 40px #351a79, 0 0 60px #351a79;
 }
 
-/* TESTING TESTING TESTING */
-
-/*** STYLES ***/
+/*** SEARCH BAR STYLES ***/
 
 .cntr-innr {
   display: flex;
@@ -305,16 +303,6 @@ display: flex;
 		outline-width: 0px;
 	}
 }
-
-
-
-
-
-
-
-
-/* TESTING TESTING TESTING */
-
 
 /* GAME INFO PAGE CSS*/
 
@@ -376,6 +364,11 @@ display: flex;
   width: 460px;
 }
 
+.GameMedia {
+  display: flex;
+}
+
+.GameVideo,
 .GameImages {
   display: flex;
   flex-wrap: nowrap;
@@ -383,6 +376,9 @@ display: flex;
   max-height: 300px;
 }
 
+.GameVideo {
+  margin-left: 50px;
+}
 .GameImages img {
   margin: 0 10px;
 }
