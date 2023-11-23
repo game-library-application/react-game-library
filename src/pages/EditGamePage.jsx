@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import GameInfo from "../components/GameInfo";
+import { Dropdown } from "semantic-ui-react";
 import axios from "axios";
 
 function EditGamePage(props) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [rating, setRating] = useState("");
+  const [allGenres, setAllGenres] = useState("")
   const [genre, setGenre] = useState("");
   const [price, setPrice] = useState("");
+  const [allPlatforms, setAllPlatforms] = useState("")
   const [platform, setPlatform] = useState("");
   const [image, setImage] = useState("");
   const [images, setImages] = useState([]);
@@ -26,15 +28,31 @@ function EditGamePage(props) {
         setTitle(response.data.title);
         setDescription(response.data.description);
         setRating(response.data.rating);
-        setGenre(response.data.genre.toString());
+        setGenre(response.data.genre);
         setPrice(response.data.price);
-        setPlatform(response.data.platform.toString());
+        setPlatform(response.data.platform);
         setImage(response.data.image_url);
         setImages(response.data.images);
+        console.log(response.data.platform)
       })
       .catch((error) => {
         console.log("Error: ", error);
       });
+
+    axios
+      .get(`${API_URL}/games`)
+      .then((response) => {
+        setAllGenres(getGenres(response.data));
+        setAllPlatforms(getPlatforms(response.data));
+      })
+      .catch((error) => {
+        console.log("Error: ", error);
+      });
+
+      
+      console.log(genre)
+      console.log(allGenres)
+
   }, []);
 
   const handleSubmit = (e) => {
@@ -44,9 +62,9 @@ function EditGamePage(props) {
       title: title,
       description: description,
       rating: rating,
-      genre: SplitString(genre),
+      genre: genre,
       price: price,
-      platform: SplitString(platform),
+      platform: platform,
       free: price <= 0 ? true : false,
       image_url: image,
       images: images,
@@ -62,23 +80,54 @@ function EditGamePage(props) {
       .catch((error) => {
         console.log("Error: ", error);
       });
+
   };
+
+  function getGenres(data) {
+    const allGenres = data.map((elm) => elm.genre);
+    const temp = looper(allGenres);
+    const genres = sortObject(temp);
+    return genres;
+  }
+
+  function getPlatforms(data) {
+    const allPlatforms = data.map((elm) => elm.platform);
+    let temp = looper(allPlatforms);
+    const platforms = sortObject(temp);
+    return platforms;
+  }
+
+  function looper(type) {
+    const newArray = [];
+
+    for (let i = 0; i < type.length; i++) {
+      for (let j = 0; j < type[i].length; j++) {
+        const exists = newArray.some((elm) => elm.key === type[i][j]);
+        if (!exists) {
+          newArray.push({
+            key: type[i][j],
+            text: type[i][j],
+            value: type[i][j],
+          });
+        }
+      }
+    }
+    return newArray;
+  }
+
+  function sortObject(data) {
+    return data.sort((a, b) => {
+      return a.text.localeCompare(b.text);
+    });
+  }
 
   function SplitString(inputString) {
     if (inputString.length === 0) return [];
+
+    console.log(inputString)
     const outputArray = inputString.split(",");
 
     return outputArray;
-  }
-
-  function pushImages(input) {
-    if (input.length <= 0) return [];
-
-    let temp = [];
-
-    temp.push(input);
-
-    return temp;
   }
 
   return (
@@ -117,15 +166,33 @@ function EditGamePage(props) {
                   onChange={(e) => setRating(e.target.value)}
                 />
               </label>
-              <label>
-                <p>Genre</p>
-                <input
-                  type="text"
-                  name="genre"
+              <label className="GenreLabel">
+                <p>Genres</p>
+                <Dropdown
+                  placeholder="GENRES"
+                  fluid={true}
+                  multiple
+                  selection
+                  required={true}
                   value={genre}
-                  onChange={(e) => setGenre(e.target.value)}
+                  onChange={(e, data) => setGenre(data.value)}
+                  options={allGenres}
                 />
               </label>
+              <label className="PlatformLabel">
+                <p>Platforms</p>
+                <Dropdown
+                  placeholder="PLATFORMS"
+                  fluid={true}
+                  multiple
+                  selection
+                  required={true}
+                  value={platform}
+                  onChange={(e, data) => setPlatform(data.value)}
+                  options={allPlatforms}
+                />
+              </label>
+
               <label>
                 <p>Price</p>
                 <input
@@ -134,15 +201,6 @@ function EditGamePage(props) {
                   step=".01"
                   value={price}
                   onChange={(e) => setPrice(e.target.value)}
-                />
-              </label>
-              <label>
-                <p>Platform</p>
-                <input
-                  type="text"
-                  name="platform"
-                  value={platform}
-                  onChange={(e) => setPlatform(e.target.value)}
                 />
               </label>
               <label>
@@ -160,7 +218,7 @@ function EditGamePage(props) {
                   type="text"
                   name="images"
                   value={images}
-                  onChange={(e) => setImages(pushImages(e.target.value))}
+                  onChange={(e) => setImages(SplitString(e.target.value))}
                 />
               </label>
               <button className="UpdateButton">Update</button>

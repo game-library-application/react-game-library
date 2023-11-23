@@ -193,7 +193,7 @@ function GamesListPage() {
   return (
     <>
     <div>
-      <h1 className="GamehubPage">GAMEHUB</h1>
+      {/* <h1 className="GamehubPage">GAMEHUB</h1> */}
     </div>
       <div className="GamesListPage">
         <div className="GamesListDiv">

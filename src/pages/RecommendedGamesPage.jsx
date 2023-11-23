@@ -42,7 +42,7 @@ function RecommendedGamesPage() {
     <>
       <div className="TitleRecommended">
         <h1 >
-          TOP 10 RECOMMENDED GAMES BY RATING
+          TOP 10 GAMES
         </h1>
       </div>
       <div className="GamesListDiv">

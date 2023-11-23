@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Dropdown, FormDropdown } from "semantic-ui-react";
+import { Dropdown } from "semantic-ui-react";
 import axios from "axios";
 
 const API_URL = "https://api-json-server.adaptable.app";
@@ -232,18 +232,14 @@ function AddGamePage() {
               </div>
               <div className="hr"></div>
               <div className="StatisticsAdd">
+                <div className="RatingPriceAdd">
+                  <h3>RATING</h3>
+                  <p>{rating === "" ? "?/10" : rating}/10</p>
+                  <h3 className="PriceH3">PRICE</h3>
+                  <p>{price === "" ? "? €" : price} €</p>
+                </div>
                 <div className="PlatformGenreAdd">
-                  <h3>PLATFORMS</h3>
-                  <div className="ButtonsAdd">
-                    {platform === "" ? (
-                      <p>No platforms</p>
-                    ) : (
-                      platform.map((platform, index) => (
-                        <button key={index}>{platform}</button>
-                      ))
-                    )}
-                  </div>
-                  <h3>GENRES</h3>
+                <h3 className="GenresH3">GENRES</h3>
                   <div className="ButtonsAdd">
                     {genre === "" ? (
                       <p>No genres</p>
@@ -253,13 +249,17 @@ function AddGamePage() {
                       ))
                     )}
                   </div>
-                </div>
-                <div className="RatingPriceAdd">
-                  <h3>RATING</h3>
-                  <p>{rating === "" ? "?/10" : rating}/10</p>
-                  <h3>PRICE</h3>
-                  <p>{price === "" ? "? €" : price} €</p>
-                </div>
+                  <h3 className="PlatformsH3">PLATFORMS</h3>
+                  <div className="ButtonsAdd">
+                    {platform === "" ? (
+                      <p>No platforms</p>
+                    ) : (
+                      platform.map((platform, index) => (
+                        <button key={index}>{platform}</button>
+                      ))
+                    )}
+                  </div>
+                </div>     
               </div>
             </div>
           </div>
