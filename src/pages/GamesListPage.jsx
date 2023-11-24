@@ -125,7 +125,6 @@ function GamesListPage() {
   };
 
   const filterPlatformHandler = (event) => {
-    console.log(event.value);
     setDisplayList(
       gamesList.filter((elm) => {
         return elm.platform.includes(event.value);
@@ -192,13 +191,7 @@ function GamesListPage() {
       color: "transparent",
       zIndex: "9999",
 
-    }) /* ,
-    menuList: (provided) => ({
-      ...provided,
-      "::-webkit-scrollbar-track": {
-        background: "white"
-      },
-    }) */,
+    })
   };
 
   const handlePaginationChange = (e, { activePage }) =>

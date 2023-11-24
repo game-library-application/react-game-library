@@ -1,4 +1,3 @@
-
 function GameDetailsContainer({title, imageUrl, description, rating, price, genre, platform}) {
 
     return (

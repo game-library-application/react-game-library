@@ -73,7 +73,6 @@ function AddGamePage() {
         }
       }
     }
-
     return newArray;
   }
 

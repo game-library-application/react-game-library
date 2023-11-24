@@ -10,7 +10,6 @@ function Navbar() {
   const [expand, setExpand] = useState(true);
 
   const handleExpandClick = () => {
-  console.log("cliked");
     setExpand(!expand);
   }
 
@@ -31,14 +30,14 @@ function Navbar() {
           </div>
           <span className="sidebarLinks">Home</span>
         </NavLink>
-       <hr className="hrSidebar"/>
+        <hr className="hrSidebar" />
         <NavLink to="/games" element={<GamesListPage />} className={"NavLink"}>
           <div>
             <i className="th icon"></i>
           </div>
           <span className="sidebarLinks">Browse</span>
         </NavLink>
-        <hr className="hrSidebar"/>
+        <hr className="hrSidebar" />
         <NavLink
           to="/random"
           element={<RandomGamePage />}
@@ -49,14 +48,14 @@ function Navbar() {
           </div>
           <span className="sidebarLinks">Random</span>
         </NavLink>
-        <hr className="hrSidebar"/>
+        <hr className="hrSidebar" />
         <NavLink to="/add" element={<AddGamePage />} className={"NavLink"}>
           <div>
             <i className="plus icon"></i>
           </div>
           <span className="sidebarLinks">Add Game</span>
         </NavLink>
-        <hr className="hrSidebar"/>
+        <hr className="hrSidebar" />
         <NavLink
           to="/recommended"
           element={<RecommendedGamesPage />}

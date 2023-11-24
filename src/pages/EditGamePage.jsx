@@ -38,7 +38,6 @@ function EditGamePage(props) {
         setImage(response.data.image_url);
         setImages(response.data.images);
         setVideoUrl(response.data.video_url);
-        console.log(response.data.platform)
       })
       .catch((error) => {
         console.log("Error: ", error);
@@ -53,11 +52,6 @@ function EditGamePage(props) {
       .catch((error) => {
         console.log("Error: ", error);
       });
-
-
-    console.log(genre)
-    console.log(allGenres)
-
   }, []);
 
   const handleSubmit = (e) => {
@@ -75,8 +69,6 @@ function EditGamePage(props) {
       images: images,
       video_url: videoUrl
     };
-
-    console.log(images);
 
     axios
       .put(`${API_URL}/games/${gameId}`, requestBody)
@@ -136,7 +128,6 @@ function EditGamePage(props) {
   function SplitString(inputString) {
     if (inputString.length === 0) return [];
 
-    console.log(inputString)
     const outputArray = inputString.split(",");
 
     return outputArray;
