@@ -26,9 +26,9 @@ function GameDetailsContainer({title, imageUrl, description, rating, price, genr
               <div className="StatisticsAdd">
                 <div className="RatingPriceAdd">
                   <h3>RATING</h3>
-                  <p>{rating === "" ? "?/10" : rating}/10</p>
+                  <p>{rating === "" ? "?" : rating}/10</p>
                   <h3 className="PriceH3">PRICE</h3>
-                  <p>{price === "" ? "? €" : price} €</p>
+                  <p>{price === "" || price == 0 ? "FREE" : `${price}€`}</p>
                 </div>
                 <div className="PlatformGenreAdd">
                   <h3 className="GenresH3">GENRES</h3>
