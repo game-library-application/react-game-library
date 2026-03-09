@@ -4,7 +4,7 @@ import { Dropdown } from "semantic-ui-react";
 import GameDetailsContainer from "../components/GameDetailsContainer";
 import axios from "axios";
 
-const API_URL = "https://api-json-server.adaptable.app";
+const API_URL = "https://api-json-server.up.railway.app";
 
 function AddGamePage() {
   const [title, setTitle] = useState("");
