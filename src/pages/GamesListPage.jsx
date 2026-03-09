@@ -4,7 +4,7 @@ import Select from "react-select";
 import axios from "axios";
 import { Pagination } from "semantic-ui-react";
 
-const API_URL = "https://api-json-server.adaptable.app";
+const API_URL = "https://api-json-server.up.railway.app";
 
 function GamesListPage() {
   const [gamesList, setGamesList] = useState(null);
