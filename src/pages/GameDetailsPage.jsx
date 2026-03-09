@@ -10,7 +10,7 @@ function GameDetailsPage() {
 
   const navigate = useNavigate();
 
-  const API_URL = "https://api-json-server.adaptable.app";
+  const API_URL = "https://api-json-server.up.railway.app";
 
   useEffect(() => {
     axios
