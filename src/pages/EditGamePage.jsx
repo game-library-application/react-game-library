@@ -21,7 +21,7 @@ function EditGamePage(props) {
 
   const navigate = useNavigate();
 
-  const API_URL = "https://api-json-server.adaptable.app";
+  const API_URL = "https://api-json-server.up.railway.app";
 
   const defaultImageUrl = "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
 
