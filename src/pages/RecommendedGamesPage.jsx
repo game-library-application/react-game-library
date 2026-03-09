@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-const API_URL = "https://api-json-server.adaptable.app";
+const API_URL = "https://api-json-server.up.railway.app";
 
 function RecommendedGamesPage() {
   const [gamesList, setGamesList] = useState(null);
